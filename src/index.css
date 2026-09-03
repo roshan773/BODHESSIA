@@ -7,136 +7,110 @@
     --bg-dark: #0A0A0A;
     --bg-dark-secondary: #141414;
     
-    --text-primary: #111111;
-    --text-secondary: #6D6D68;
-    --text-muted: #9E9E98;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
     
-    --border-light: #E4E4DF;
-    --border-dark: #222220;
+    --border-light: #E2E8F0;
+    --border-dark: #262626;
     
     --accent-bronze: #B8874A;
     --accent-deep: #8E6A3E;
-    --accent-jade: #31453D;
+    --accent-jade: #1E3A2F;
   }
 
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    letter-spacing: -0.015em;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, .font-serif {
-    font-family: 'Cormorant Garamond', 'Instrument Serif', Georgia, serif;
-    font-weight: 500;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #0F172A;
   }
 
   .font-display {
-    font-family: 'Cinzel', 'Cormorant Garamond', serif;
-    letter-spacing: 0.12em;
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  .font-sans {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+
+  p {
+    color: #334155;
+    font-weight: 400;
   }
 }
 
 /* Modern Editorial Layout & Precision Hairlines */
 .border-fine {
-  border-color: #E4E4DF;
+  border-color: #E2E8F0;
 }
 
 .border-dark-fine {
-  border-color: #222220;
+  border-color: #262626;
 }
 
 .editorial-card {
   background: #FFFFFF;
-  border: 1px solid #E4E4DF;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .editorial-card:hover {
   border-color: #B8874A;
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
 }
 
 .editorial-card-dark {
   background: #141414;
-  border: 1px solid #222220;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #262626;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .editorial-card-dark:hover {
   border-color: #B8874A;
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
 }
 
 /* Clean Minimal Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F7F7F5;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D5D5CF;
-  border-radius: 2px;
+  background: #CBD5E1;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #B8874A;
 }
 
-/* Metadata Badge style - clean & modern */
+/* Metadata Badge style - clean & bold readability */
 .badge-clean {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Plus Jakarta Sans', monospace;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 10px;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 700;
   padding: 3px 8px;
   border-radius: 2px;
-}
-
-.badge-canonical {
-  background: #EBF3EF;
-  border: 1px solid #C4DCCE;
-  color: #244B38;
-}
-
-.badge-historical {
-  background: #F8F3EC;
-  border: 1px solid #E5D5C1;
-  color: #8E6A3E;
-}
-
-.badge-archaeological {
-  background: #FBF0ED;
-  border: 1px solid #EDCCC5;
-  color: #8B3A2B;
-}
-
-.badge-traditional {
-  background: #F0F0EC;
-  border: 1px solid #D8D8D0;
-  color: #555550;
-}
-
-.badge-scholarly {
-  background: #EDF4F8;
-  border: 1px solid #C8DCE8;
-  color: #225577;
-}
-
-/* Map route lines */
-@keyframes dash {
-  to {
-    stroke-dashoffset: -100;
-  }
-}
-
-.animate-route-line {
-  stroke-dasharray: 5, 5;
-  animation: dash 25s linear infinite;
 }
