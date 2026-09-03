@@ -17,7 +17,7 @@ const INDEX_ITEMS: IndexItem[] = [
     title: 'THE BUDDHA',
     subtitle: 'The life, ascetic striving, and awakening of Siddhārtha Gautama',
     path: '/buddha',
-    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/buddhas/gautama-hero.jpg',
     category: 'BIOGRAPHY & HISTORICAL AWAKENING'
   },
   {
