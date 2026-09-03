@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-obsidian-950: #070706;
+    --color-obsidian-900: #0B0B09;
+    --color-obsidian-800: #12110E;
+    --color-obsidian-700: #1A1916;
+    --color-obsidian-600: #24231F;
+    
+    --color-parchment-100: #FAF8F5;
+    --color-parchment-200: #F4F0E8;
+    --color-parchment-300: #E7DDCC;
+    --color-parchment-400: #D9CDB8;
+    --color-parchment-500: #B8B0A2;
+    
+    --color-saffron-300: #F5D38A;
+    --color-saffron-400: #E0B25B;
+    --color-saffron-500: #C89D4B;
+    --color-saffron-600: #A9783B;
+    
+    --color-bronze-400: #9E8055;
+    --color-bronze-500: #80633E;
+    
+    --color-cinnabar-500: #8B3A2B;
+    --color-jade-500: #30463D;
+  }
+
+  body {
+    background-color: #0B0B09;
+    color: #F4F0E8;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', 'Cinzel', Georgia, serif;
+  }
+
+  .font-display {
+    font-family: 'Cinzel', 'Cormorant Garamond', serif;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Custom Museum Glass and Borders */
+.glass-panel {
+  background: rgba(18, 17, 14, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 157, 75, 0.15);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(26, 25, 22, 0.6) 0%, rgba(18, 17, 14, 0.8) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 157, 75, 0.12);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(200, 157, 75, 0.38);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(200, 157, 75, 0.15);
+  transform: translateY(-2px);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF1D0 0%, #E0B25B 45%, #C89D4B 75%, #8A5E29 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E7DDCC 50%, #B8B0A2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(200, 157, 75, 0.22);
+}
+
+.gold-hairline {
+  background: linear-gradient(90deg, transparent, rgba(200, 157, 75, 0.35), transparent);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #24231F;
+  border-radius: 3px;
+  border: 1px solid rgba(200, 157, 75, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A9783B;
+}
+
+/* Ambient Grain & Texture */
+.bg-grain {
+  background-image: radial-gradient(rgba(200, 157, 75, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Subtle line animations */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.animate-route-line {
+  stroke-dasharray: 6, 6;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Metadata Badge style */
+.badge-canonical {
+  background: rgba(48, 70, 61, 0.25);
+  border: 1px solid rgba(75, 120, 100, 0.4);
+  color: #A3D8BE;
+}
+
+.badge-historical {
+  background: rgba(138, 94, 41, 0.2);
+  border: 1px solid rgba(200, 157, 75, 0.35);
+  color: #E0B25B;
+}
+
+.badge-archaeological {
+  background: rgba(139, 58, 43, 0.2);
+  border: 1px solid rgba(180, 80, 60, 0.4);
+  color: #F0A090;
+}
+
+.badge-traditional {
+  background: rgba(36, 35, 31, 0.6);
+  border: 1px solid rgba(184, 176, 162, 0.25);
+  color: #D9CDB8;
+}
