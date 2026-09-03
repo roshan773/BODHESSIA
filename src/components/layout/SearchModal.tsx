@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { Search, X, BookOpen, Sparkles, Compass, ShieldCheck, MapPin, Layers } from 'lucide-react';
+import { Search, X, ArrowUpRight } from 'lucide-react';
 import { BUDDHAS_28 } from '../../data/buddhas28';
 import { BODHISATTVAS } from '../../data/bodhisattvas';
 import { TEACHINGS } from '../../data/teachings';
@@ -27,7 +27,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
     }
   }, [isOpen]);
 
-  // Build unified search index
   const allItems: SearchResultItem[] = useMemo(() => {
     const items: SearchResultItem[] = [];
 
@@ -130,64 +129,77 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
   if (!isOpen) return null;
 
   const categories = ['All', 'Buddha', 'Bodhisattva', 'Teaching', 'Symbol', 'History', 'Place'];
-
-  const getCategoryIcon = (cat: string) => {
-    switch (cat) {
-      case 'Buddha':
-        return <Sparkles className="w-4 h-4 text-saffron-400" />;
-      case 'Bodhisattva':
-        return <ShieldCheck className="w-4 h-4 text-amber-400" />;
-      case 'Teaching':
-        return <BookOpen className="w-4 h-4 text-emerald-400" />;
-      case 'Symbol':
-        return <Layers className="w-4 h-4 text-cyan-400" />;
-      case 'History':
-        return <Compass className="w-4 h-4 text-rose-400" />;
-      default:
-        return <MapPin className="w-4 h-4 text-parchment-400" />;
-    }
-  };
+  const quickSearches = ['Buddha', 'Avalokiteśvara', 'Dukkha', 'Dharma Wheel', 'Bodh Gaya', 'Ashoka', 'Nirvana', 'Eightfold Path'];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 bg-black/85 backdrop-blur-xl px-4 animate-fadeIn">
-      <div className="w-full max-w-3xl bg-obsidian-900 border border-saffron-500/30 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
-        {/* Search Input Bar */}
-        <div className="relative flex items-center px-5 py-4 border-b border-saffron-500/20 bg-obsidian-950/80">
-          <Search className="w-5 h-5 text-saffron-400 mr-3 shrink-0" />
-          <input
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search Buddha, Bodhisattvas, Eightfold Path, Nirvana, Ashoka, Bodh Gaya..."
-            className="w-full bg-transparent text-parchment-100 placeholder:text-parchment-500 text-base md:text-lg focus:outline-none"
-          />
-          {query && (
-            <button
-              onClick={() => setQuery('')}
-              className="p-1 text-parchment-400 hover:text-parchment-100 mr-2"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
+    <div className="fixed inset-0 z-50 bg-[#F7F7F5] flex flex-col justify-between p-6 sm:p-12 overflow-y-auto animate-fadeIn">
+      <div className="max-w-4xl mx-auto w-full space-y-8">
+        {/* Top Close Bar */}
+        <div className="flex items-center justify-between pb-6 border-b border-[#E4E4DF]">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#6D6D68]">
+            BODHESSIA GLOBAL KNOWLEDGE SEARCH
+          </span>
           <button
             onClick={onClose}
-            className="text-xs font-mono bg-obsidian-800 text-parchment-400 px-2 py-1 rounded border border-saffron-500/20 hover:text-parchment-100"
+            className="p-2 border border-[#E4E4DF] hover:border-[#111111] transition-colors"
           >
-            ESC
+            <X className="w-5 h-5 text-[#111111]" />
           </button>
         </div>
 
+        {/* Large Prompt & Input */}
+        <div className="space-y-4">
+          <label className="font-serif text-3xl sm:text-5xl font-light text-[#111111] block">
+            WHAT ARE YOU LOOKING FOR?
+          </label>
+          <div className="relative border-b-2 border-[#111111] pb-2 flex items-center gap-4">
+            <Search className="w-6 h-6 text-[#B8874A] shrink-0" />
+            <input
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search by master, doctrine, symbol, era, or sacred place..."
+              className="w-full bg-transparent text-xl sm:text-3xl font-serif text-[#111111] placeholder:text-[#9E9E98] focus:outline-none"
+            />
+            {query && (
+              <button onClick={() => setQuery('')} className="text-xs font-mono text-[#6D6D68]">
+                CLEAR
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Quick Search Suggestions */}
+        {!query && (
+          <div className="space-y-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#9E9E98] block">
+              Suggested Explorations
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {quickSearches.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setQuery(s)}
+                  className="px-3 py-1 bg-white border border-[#E4E4DF] hover:border-[#B8874A] text-xs font-mono text-[#111111] transition-colors"
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Categories Bar */}
-        <div className="flex items-center gap-2 px-5 py-2.5 overflow-x-auto border-b border-saffron-500/10 bg-obsidian-950/40 no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-[#E4E4DF]">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-xs font-mono uppercase px-3 py-1 rounded-full whitespace-nowrap transition-all ${
+              className={`text-xs font-mono uppercase px-3.5 py-1.5 whitespace-nowrap transition-colors ${
                 activeCategory === cat
-                  ? 'bg-saffron-500 text-obsidian-950 font-semibold'
-                  : 'bg-obsidian-800/80 text-parchment-400 hover:text-parchment-200 border border-saffron-500/10'
+                  ? 'bg-[#111111] text-white'
+                  : 'bg-white text-[#6D6D68] hover:text-[#111111] border border-[#E4E4DF]'
               }`}
             >
               {cat}
@@ -195,13 +207,13 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
           ))}
         </div>
 
-        {/* Results List */}
-        <div className="p-3 overflow-y-auto flex-1 space-y-1.5 divide-y divide-saffron-500/5">
+        {/* Results Stream */}
+        <div className="space-y-2 max-h-[480px] overflow-y-auto divide-y divide-[#E4E4DF]">
           {filteredResults.length === 0 ? (
-            <div className="py-12 text-center text-parchment-400">
-              <p className="font-serif text-lg">No records found for "{query}"</p>
-              <p className="text-xs font-mono mt-1 text-parchment-500">
-                Try searching for 'Dharma', 'Avalokiteśvara', 'Dīpaṅkara', 'Sarnath', or 'Nirvana'.
+            <div className="py-12 text-center text-[#6D6D68]">
+              <p className="font-serif text-2xl">No records matching "{query}"</p>
+              <p className="text-xs font-mono mt-1 text-[#9E9E98]">
+                Try searching for 'Dharma', 'Avalokiteśvara', 'Ashoka', or 'Nirvana'.
               </p>
             </div>
           ) : (
@@ -209,37 +221,34 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
               <div
                 key={item.id}
                 onClick={() => handleSelect(item.url)}
-                className="group p-3.5 rounded-lg hover:bg-obsidian-800/80 cursor-pointer transition-all flex items-start gap-3.5 border border-transparent hover:border-saffron-500/20"
+                className="group py-4 px-3 hover:bg-white cursor-pointer transition-all flex items-start justify-between gap-6"
               >
-                <div className="p-2 rounded bg-obsidian-950 border border-saffron-500/15 shrink-0 mt-0.5">
-                  {getCategoryIcon(item.category)}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-2">
-                    <h4 className="text-sm md:text-base font-serif font-bold text-parchment-100 group-hover:text-saffron-300 truncate">
-                      {item.title}
-                    </h4>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-saffron-400/80 shrink-0">
+                <div className="space-y-1 min-w-0">
+                  <div className="flex items-center gap-3">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#B8874A] bg-[#F7F7F5] px-2 py-0.5 border border-[#E4E4DF]">
                       {item.category}
                     </span>
+                    <h4 className="text-lg sm:text-xl font-serif font-bold text-[#111111] group-hover:text-[#B8874A] transition-colors truncate">
+                      {item.title}
+                    </h4>
                   </div>
-                  <p className="text-xs font-mono text-parchment-400 truncate mt-0.5">
+                  <p className="text-xs font-mono text-[#6D6D68]">
                     {item.subtitle}
                   </p>
-                  <p className="text-xs text-parchment-400/80 line-clamp-1 mt-1 font-sans">
+                  <p className="text-xs text-[#6D6D68] line-clamp-1 font-light">
                     {item.description}
                   </p>
                 </div>
+
+                <ArrowUpRight className="w-4 h-4 text-[#9E9E98] group-hover:text-[#111111] shrink-0 mt-2 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </div>
             ))
           )}
         </div>
+      </div>
 
-        {/* Footer info */}
-        <div className="px-5 py-3 border-t border-saffron-500/15 bg-obsidian-950/80 flex items-center justify-between text-xs font-mono text-parchment-400">
-          <span>{filteredResults.length} knowledge entries</span>
-          <span>Click entry to open section</span>
-        </div>
+      <div className="max-w-4xl mx-auto w-full pt-8 text-center text-xs font-mono text-[#9E9E98] border-t border-[#E4E4DF]">
+        <span>Press ESC to return · {filteredResults.length} knowledge records available</span>
       </div>
     </div>
   );

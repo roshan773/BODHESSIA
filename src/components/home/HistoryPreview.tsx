@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Compass, Calendar, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar } from 'lucide-react';
 import { HISTORY_ERAS } from '../../data/history';
 
 interface HistoryPreviewProps {
@@ -15,29 +15,28 @@ export const HistoryPreview: React.FC<HistoryPreviewProps> = ({ onNavigate }) =>
   ];
 
   return (
-    <section className="py-24 bg-obsidian-900 border-t border-saffron-500/15 relative">
+    <section className="py-24 sm:py-32 bg-white border-t border-[#E4E4DF] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#E4E4DF] gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-saffron-400 mb-2">
-              <Compass className="w-3.5 h-3.5" />
-              <span>CHRONOLOGICAL EXPANSION</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-parchment-100">
-              A JOURNEY THROUGH TIME
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block mb-2">
+              09 · CHRONOLOGICAL EXPANSION
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-serif font-light text-[#111111]">
+              2,500 YEARS IN MOTION
             </h2>
-            <p className="mt-2 text-base text-parchment-400 max-w-xl">
-              From ancient India to a global civilization spanning five continents.
+            <p className="text-sm font-mono text-[#6D6D68] uppercase tracking-wider mt-1">
+              FROM ANCIENT INDIA TO A GLOBAL TRADITION
             </p>
           </div>
 
           <button
             onClick={() => onNavigate('/history')}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-obsidian-950 border border-saffron-500/30 text-saffron-300 hover:text-parchment-100 hover:border-saffron-500/60 font-mono text-xs uppercase tracking-wider transition-all self-start md:self-auto"
+            className="text-xs font-mono uppercase tracking-wider text-[#111111] hover:text-[#B8874A] transition-colors flex items-center gap-1 self-start md:self-auto"
           >
-            <span>EXPLORE FULL TIMELINE</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Explore 12 Historical Eras</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
@@ -47,30 +46,31 @@ export const HistoryPreview: React.FC<HistoryPreviewProps> = ({ onNavigate }) =>
             <div
               key={era.id}
               onClick={() => onNavigate('/history')}
-              className="glass-card group cursor-pointer rounded-xl p-6 border-saffron-500/15 flex flex-col justify-between space-y-4 hover:border-saffron-500/40"
+              className="group cursor-pointer bg-[#F7F7F5] border border-[#E4E4DF] hover:border-[#B8874A] transition-all p-6 sm:p-8 flex flex-col justify-between space-y-6"
             >
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="text-saffron-400 font-bold">{era.era}</span>
-                  <span className="text-parchment-400">{era.period}</span>
+                  <span className="text-[#B8874A] font-bold">{era.era}</span>
+                  <span className="text-[#6D6D68]">{era.period}</span>
                 </div>
 
-                <h3 className="text-xl font-serif font-bold text-parchment-100 group-hover:text-saffron-300 transition-colors">
-                  {era.title}
-                </h3>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#111111] group-hover:text-[#B8874A] transition-colors">
+                    {era.title}
+                  </h3>
+                  <p className="text-xs font-mono text-[#6D6D68] mt-1">
+                    {era.region}
+                  </p>
+                </div>
 
-                <p className="text-xs font-mono text-saffron-400/80">
-                  {era.region}
-                </p>
-
-                <p className="text-xs text-parchment-300 line-clamp-3 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6D6D68] line-clamp-3 leading-relaxed font-light">
                   {era.description}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-saffron-500/10 flex items-center justify-between text-xs font-mono text-saffron-400 group-hover:text-saffron-300 transition-colors">
-                <span className="tracking-widest uppercase text-[10px]">Read Era Records</span>
-                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+              <div className="pt-4 border-t border-[#E4E4DF] flex items-center justify-between text-xs font-mono text-[#111111] group-hover:text-[#B8874A]">
+                <span className="uppercase tracking-widest text-[10px]">Read Epoch Records</span>
+                <span>→</span>
               </div>
             </div>
           ))}

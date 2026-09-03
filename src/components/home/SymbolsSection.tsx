@@ -1,8 +1,8 @@
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { SYMBOLS } from '../../data/symbols';
-import { SymbolCard } from '../cards/SymbolCard';
 import { SymbolDetail } from '../../types';
+import { SymbolCard } from '../cards/SymbolCard';
 
 interface SymbolsSectionProps {
   onNavigate: (route: string) => void;
@@ -10,37 +10,36 @@ interface SymbolsSectionProps {
 }
 
 export const SymbolsSection: React.FC<SymbolsSectionProps> = ({ onNavigate, onSelectSymbol }) => {
-  const displaySymbols = SYMBOLS.slice(0, 6);
+  const displaySymbols = SYMBOLS.slice(0, 4);
 
   return (
-    <section className="py-24 bg-obsidian-950 border-t border-saffron-500/15 relative">
+    <section className="py-24 sm:py-32 bg-[#F7F7F5] border-t border-[#E4E4DF] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#E4E4DF] gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-saffron-400 mb-2">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>VISUAL ICONOGRAPHY & SACRED EMBLEMS</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-parchment-100">
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block mb-2">
+              08 · SACRED ICONOGRAPHY
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-serif font-light text-[#111111]">
               SYMBOLS OF THE DHARMA
             </h2>
-            <p className="mt-2 text-base text-parchment-400 max-w-xl">
-              Aniconic emblems and auspicious signs carrying deep philosophical meaning across centuries.
+            <p className="text-sm font-mono text-[#6D6D68] uppercase tracking-wider mt-1">
+              A VISUAL LANGUAGE OF BUDDHIST THOUGHT
             </p>
           </div>
 
           <button
             onClick={() => onNavigate('/symbols')}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-obsidian-900 border border-saffron-500/30 text-saffron-300 hover:text-parchment-100 hover:border-saffron-500/60 font-mono text-xs uppercase tracking-wider transition-all self-start md:self-auto"
+            className="text-xs font-mono uppercase tracking-wider text-[#111111] hover:text-[#B8874A] transition-colors flex items-center gap-1 self-start md:self-auto"
           >
-            <span>EXPLORE ALL SYMBOLS</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Explore All Symbols</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
-        {/* 6 Symbol Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 4 Vector Informational Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displaySymbols.map((s) => (
             <SymbolCard
               key={s.id}

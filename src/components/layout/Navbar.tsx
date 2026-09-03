@@ -15,7 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeRoute, onNavigate, onOpenS
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -47,16 +47,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeRoute, onNavigate, onOpenS
   const handleNavClick = (path: string) => {
     onNavigate(path);
     setIsMobileMenuOpen(false);
-    playSingingBowl(1.1);
+    playSingingBowl(1.05);
   };
 
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-500 ${
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'py-3 bg-obsidian-950/85 backdrop-blur-md border-b border-saffron-500/20 shadow-lg shadow-black/40'
-            : 'py-5 bg-gradient-to-b from-obsidian-950/90 to-transparent'
+            ? 'py-3.5 bg-[#F7F7F5]/90 backdrop-blur-md border-b border-[#E4E4DF] shadow-sm'
+            : 'py-6 bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -65,26 +65,26 @@ export const Navbar: React.FC<NavbarProps> = ({ activeRoute, onNavigate, onOpenS
             onClick={() => handleNavClick('/')}
             className="flex flex-col items-start text-left group focus:outline-none"
           >
-            <span className="font-display text-xl sm:text-2xl font-bold tracking-[0.22em] text-parchment-100 group-hover:text-saffron-300 transition-colors">
+            <span className="font-display text-xl sm:text-2xl font-bold tracking-[0.2em] text-[#111111] group-hover:text-[#B8874A] transition-colors">
               BODHESSIA
             </span>
-            <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-saffron-400/90 -mt-0.5">
-              Digital Museum of Buddhist Knowledge
+            <span className="font-mono text-[7.5px] uppercase tracking-[0.28em] text-[#6D6D68] -mt-0.5">
+              THE WORLD OF BUDDHIST KNOWLEDGE
             </span>
           </button>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => {
               const isActive = activeRoute === link.path;
               return (
                 <button
                   key={link.path}
                   onClick={() => handleNavClick(link.path)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-mono uppercase tracking-wider transition-all duration-300 ${
+                  className={`px-3 py-1.5 text-xs font-mono uppercase tracking-wider transition-colors ${
                     isActive
-                      ? 'text-saffron-300 font-semibold bg-saffron-500/15 border border-saffron-500/30'
-                      : 'text-parchment-400 hover:text-parchment-100 hover:bg-obsidian-800/60'
+                      ? 'text-[#111111] font-bold border-b border-[#111111]'
+                      : 'text-[#6D6D68] hover:text-[#111111]'
                   }`}
                 >
                   {link.label}
@@ -93,42 +93,42 @@ export const Navbar: React.FC<NavbarProps> = ({ activeRoute, onNavigate, onOpenS
             })}
           </nav>
 
-          {/* Right Action Tools (Search, Audio, Mobile Menu) */}
+          {/* Right Action Tools (Audio, Search, Mobile Menu) */}
           <div className="flex items-center space-x-2 sm:space-x-3">
             {/* Ambient Soundscape Toggle */}
             <button
               onClick={toggleDrone}
               title={isPlayingDrone ? 'Mute Ambient Soundscape' : 'Enable Meditative Ambient Drone'}
-              className={`p-2 rounded-lg border transition-all duration-300 flex items-center gap-1.5 ${
+              className={`p-2 border transition-all flex items-center gap-1.5 ${
                 isPlayingDrone
-                  ? 'bg-saffron-500/20 text-saffron-300 border-saffron-500/40 shadow-sm shadow-saffron-500/20 animate-pulse'
-                  : 'bg-obsidian-900/80 text-parchment-400 hover:text-parchment-100 border-saffron-500/15 hover:border-saffron-500/30'
+                  ? 'bg-[#111111] text-white border-[#111111]'
+                  : 'bg-white/90 text-[#6D6D68] hover:text-[#111111] border-[#E4E4DF]'
               }`}
             >
-              {isPlayingDrone ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+              {isPlayingDrone ? <Volume2 className="w-3.5 h-3.5 text-[#B8874A]" /> : <VolumeX className="w-3.5 h-3.5" />}
               <span className="text-[10px] font-mono hidden md:inline-block">
-                {isPlayingDrone ? 'Ambient ON' : 'Ambient'}
+                {isPlayingDrone ? 'Ambient' : 'Sound'}
               </span>
             </button>
 
-            {/* Singing Bowl Chime Button */}
+            {/* Singing Bowl Chime */}
             <button
               onClick={() => playSingingBowl(1.0)}
               title="Strike Singing Bowl Chime"
-              className="p-2 rounded-lg bg-obsidian-900/80 text-parchment-400 hover:text-saffron-300 border border-saffron-500/15 hover:border-saffron-500/30 transition-colors hidden sm:flex items-center gap-1"
+              className="p-2 bg-white/90 text-[#6D6D68] hover:text-[#111111] border border-[#E4E4DF] transition-colors hidden sm:flex items-center gap-1"
             >
-              <Bell className="w-4 h-4 text-saffron-400" />
+              <Bell className="w-3.5 h-3.5 text-[#B8874A]" />
               <span className="text-[10px] font-mono">Chime</span>
             </button>
 
             {/* Search Button */}
             <button
               onClick={onOpenSearch}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-obsidian-900/80 text-parchment-300 hover:text-parchment-100 border border-saffron-500/15 hover:border-saffron-500/30 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 bg-white/90 hover:bg-[#111111] hover:text-white text-[#111111] border border-[#E4E4DF] transition-colors"
             >
-              <Search className="w-4 h-4 text-saffron-400" />
-              <span className="text-xs font-mono hidden sm:inline-block">Search</span>
-              <kbd className="hidden md:inline-block text-[9px] font-mono bg-obsidian-800 text-parchment-500 px-1.5 py-0.5 rounded border border-saffron-500/10">
+              <Search className="w-3.5 h-3.5 text-[#B8874A]" />
+              <span className="text-xs font-mono hidden sm:inline-block uppercase tracking-wider">Search</span>
+              <kbd className="hidden md:inline-block text-[9px] font-mono bg-[#F7F7F5] text-[#6D6D68] px-1 py-0.5 border border-[#E4E4DF]">
                 ⌘K
               </kbd>
             </button>
@@ -136,7 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeRoute, onNavigate, onOpenS
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg bg-obsidian-900 text-parchment-300 hover:text-parchment-100 border border-saffron-500/20 lg:hidden"
+              className="p-2 bg-white text-[#111111] border border-[#E4E4DF] lg:hidden"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -146,44 +146,42 @@ export const Navbar: React.FC<NavbarProps> = ({ activeRoute, onNavigate, onOpenS
 
       {/* Full-Screen Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-30 bg-obsidian-950/98 backdrop-blur-2xl flex flex-col justify-between pt-24 pb-8 px-6 lg:hidden animate-fadeIn">
-          <div className="space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-saffron-400/80 block">
-              Museum Exploration Routes
+        <div className="fixed inset-0 z-30 bg-[#F7F7F5] flex flex-col justify-between pt-24 pb-8 px-6 lg:hidden animate-fadeIn">
+          <div className="space-y-6">
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block">
+              KNOWLEDGE NAVIGATION
             </span>
-            <div className="grid grid-cols-1 gap-2">
+            <div className="grid grid-cols-1 divide-y divide-[#E4E4DF] border-t border-b border-[#E4E4DF]">
               {navLinks.map((link) => {
                 const isActive = activeRoute === link.path;
                 return (
                   <button
                     key={link.path}
                     onClick={() => handleNavClick(link.path)}
-                    className={`text-left p-3.5 rounded-xl font-serif text-xl tracking-wide flex items-center justify-between transition-all ${
-                      isActive
-                        ? 'bg-saffron-500/15 text-saffron-300 border border-saffron-500/30 font-bold'
-                        : 'text-parchment-200 hover:bg-obsidian-900 border border-transparent'
+                    className={`text-left py-4 font-serif text-2xl tracking-wide flex items-center justify-between transition-colors ${
+                      isActive ? 'text-[#B8874A] font-bold' : 'text-[#111111]'
                     }`}
                   >
                     <span>{link.label}</span>
-                    <span className="text-xs font-mono text-saffron-500">→</span>
+                    <span className="text-xs font-mono text-[#6D6D68]">→</span>
                   </button>
                 );
               })}
             </div>
           </div>
 
-          <div className="pt-6 border-t border-saffron-500/15 flex flex-col gap-3">
+          <div className="pt-6 border-t border-[#E4E4DF] flex flex-col gap-3">
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 onOpenSearch();
               }}
-              className="w-full py-3 rounded-xl bg-saffron-500 text-obsidian-950 font-mono text-xs uppercase tracking-wider font-bold flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-[#111111] text-white font-mono text-xs uppercase tracking-wider font-bold flex items-center justify-center gap-2"
             >
-              <Search className="w-4 h-4" /> Global Knowledge Search
+              <Search className="w-4 h-4 text-[#B8874A]" /> Search Buddhist Knowledge
             </button>
-            <p className="text-center text-[10px] font-mono text-parchment-500 uppercase tracking-widest">
-              BODHESSIA · The World of Buddhist Knowledge
+            <p className="text-center text-[10px] font-mono text-[#6D6D68] uppercase tracking-widest">
+              BODHESSIA · THE WORLD OF BUDDHIST KNOWLEDGE
             </p>
           </div>
         </div>

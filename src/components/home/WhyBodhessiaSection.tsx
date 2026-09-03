@@ -1,96 +1,59 @@
 import React from 'react';
-import { ShieldCheck, BookOpen, Scale, Landmark, Sparkles, Globe } from 'lucide-react';
+import { Scale, Globe, Landmark, Sparkles } from 'lucide-react';
 
 export const WhyBodhessiaSection: React.FC = () => {
-  const pillars = [
-    {
-      icon: Scale,
-      title: 'Academic & Editorial Rigor',
-      desc: 'We strictly distinguish between archaeological records, canonical scriptures, and traditional folklore, preserving the intellectual integrity of every tradition.'
-    },
-    {
-      icon: Globe,
-      title: 'Pan-Buddhist Inclusivity',
-      desc: 'Honoring the living branches of Theravāda, Mahāyāna, and Vajrayāna with equal respect without asserting sectarian dogmatism.'
-    },
-    {
-      icon: Landmark,
-      title: 'Visual & Cultural Museum Heritage',
-      desc: 'Preserving high-resolution imagery of stone carvings, cave murals, stupa architecture, and palm-leaf manuscripts across thirty nations.'
-    },
-    {
-      icon: Sparkles,
-      title: 'Contemplative Living Wisdom',
-      desc: 'Illuminating timeless psychological insights into mindfulness, compassion, non-attachment, and the alleviation of human distress.'
-    }
+  const taxonomyBadges = [
+    { name: 'HISTORICAL RECORD', desc: 'Corroborated by independent chronicles and historical consensus.' },
+    { name: 'CANONICAL TEXT', desc: 'Formally codified in the Pāli Tipiṭaka, Chinese Āgamas, or Tibetan Kangyur.' },
+    { name: 'ARCHAEOLOGICAL EVIDENCE', desc: 'Supported by physical epigraphy, Ashokan pillar edicts, or excavated stupas.' },
+    { name: 'TRADITIONAL ACCOUNT', desc: 'Venerated narrative preserved through oral folklore and hagiographies.' },
+    { name: 'SCHOLARLY INTERPRETATION', desc: 'Contemporary academic philological and philosophical analysis.' }
   ];
 
   return (
-    <section className="py-24 bg-obsidian-950 border-t border-saffron-500/15 relative">
+    <section className="py-24 sm:py-32 bg-white border-t border-[#E4E4DF] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-saffron-400">
-              <ShieldCheck className="w-4 h-4" />
-              <span>EDITORIAL STANDARDS MANIFESTO</span>
-            </div>
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block">
+              15 · EDITORIAL INTEGRITY
+            </span>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-parchment-100">
+            <h2 className="text-3xl sm:text-5xl font-serif font-light text-[#111111]">
               WHY BODHESSIA?
             </h2>
 
-            <p className="text-base text-parchment-300 leading-relaxed font-light">
-              BODHESSIA was founded to bring the vast heritage of Buddhist knowledge together in one carefully researched, visually rich, and globally accessible digital platform.
+            <p className="text-sm sm:text-base text-[#6D6D68] leading-relaxed font-light">
+              BODHESSIA exists to make 2,500+ years of Buddhist knowledge accessible, clear, and dignified through modern design and rigorous curation.
             </p>
 
-            <p className="text-sm text-parchment-400 leading-relaxed">
-              We are neither a sectarian religious authority nor an ordinary blog. We are a contemporary digital museum dedicated to education, preservation, cultural reverence, and philosophical discovery.
+            <p className="text-xs sm:text-sm text-[#6D6D68] leading-relaxed">
+              We are an educational and cultural knowledge platform, not a religious authority. We do not preach or tell visitors what they must believe.
             </p>
-
-            {/* Badges Box */}
-            <div className="p-5 rounded-xl bg-obsidian-900/80 border border-saffron-500/20 space-y-3">
-              <span className="text-xs font-mono uppercase tracking-widest text-saffron-400 block font-semibold">
-                Our Verification Taxonomy
-              </span>
-              <div className="flex flex-wrap gap-2 text-[10px] font-mono">
-                <span className="px-2.5 py-1 rounded bg-amber-950/40 text-amber-300 border border-amber-700/40">
-                  HISTORICAL RECORD
-                </span>
-                <span className="px-2.5 py-1 rounded bg-emerald-950/40 text-emerald-300 border border-emerald-700/40">
-                  CANONICAL TEXT
-                </span>
-                <span className="px-2.5 py-1 rounded bg-rose-950/40 text-rose-300 border border-rose-700/40">
-                  ARCHAEOLOGICAL EVIDENCE
-                </span>
-                <span className="px-2.5 py-1 rounded bg-stone-900/60 text-stone-300 border border-stone-700/40">
-                  TRADITIONAL ACCOUNT
-                </span>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column: 4 Pillars */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {pillars.map((p, idx) => {
-              const Icon = p.icon;
-              return (
+          {/* Right Column: Taxonomy Badges */}
+          <div className="lg:col-span-7 space-y-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#111111] block font-semibold pb-2 border-b border-[#E4E4DF]">
+              Five-Tier Verification Taxonomy
+            </span>
+
+            <div className="space-y-3">
+              {taxonomyBadges.map((tax, idx) => (
                 <div
                   key={idx}
-                  className="glass-card rounded-xl p-6 border-saffron-500/15 space-y-3 hover:border-saffron-500/35 transition-colors"
+                  className="p-4 bg-[#F7F7F5] border border-[#E4E4DF] flex flex-col sm:flex-row sm:items-center justify-between gap-3"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-obsidian-950 border border-saffron-500/25 flex items-center justify-center text-saffron-400">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-lg font-serif font-bold text-parchment-100">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-parchment-300 leading-relaxed">
-                    {p.desc}
-                  </p>
+                  <span className="text-xs font-mono font-bold tracking-wider text-[#111111] shrink-0">
+                    {tax.name}
+                  </span>
+                  <span className="text-xs text-[#6D6D68] font-light">
+                    {tax.desc}
+                  </span>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
       </div>

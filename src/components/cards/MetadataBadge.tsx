@@ -5,21 +5,42 @@ interface MetadataBadgeProps {
   metadata: MetadataTag;
   className?: string;
   size?: 'sm' | 'md';
+  darkTheme?: boolean;
 }
 
-export const MetadataBadge: React.FC<MetadataBadgeProps> = ({ metadata, className = '', size = 'sm' }) => {
+export const MetadataBadge: React.FC<MetadataBadgeProps> = ({
+  metadata,
+  className = '',
+  size = 'sm',
+  darkTheme = false
+}) => {
   const getBadgeStyle = (status: string) => {
+    if (darkTheme) {
+      switch (status) {
+        case 'Canonical Text':
+          return 'bg-[#15281E] text-[#86D2A8] border-[#254B38]';
+        case 'Historical Record':
+          return 'bg-[#2A2014] text-[#E5B575] border-[#554026]';
+        case 'Archaeological Evidence':
+          return 'bg-[#2A1714] text-[#F29F92] border-[#552B24]';
+        case 'Scholarly Interpretation':
+          return 'bg-[#152430] text-[#93CAED] border-[#254860]';
+        default:
+          return 'bg-[#1F1F1E] text-[#B5B5AF] border-[#383835]';
+      }
+    }
+
     switch (status) {
       case 'Canonical Text':
-        return 'bg-emerald-950/40 text-emerald-300 border-emerald-700/40';
+        return 'bg-[#EBF3EF] text-[#244B38] border-[#C4DCCE]';
       case 'Historical Record':
-        return 'bg-amber-950/40 text-amber-300 border-amber-700/40';
+        return 'bg-[#F8F3EC] text-[#8E6A3E] border-[#E5D5C1]';
       case 'Archaeological Evidence':
-        return 'bg-rose-950/40 text-rose-300 border-rose-700/40';
+        return 'bg-[#FBF0ED] text-[#8B3A2B] border-[#EDCCC5]';
       case 'Scholarly Interpretation':
-        return 'bg-cyan-950/40 text-cyan-300 border-cyan-700/40';
+        return 'bg-[#EDF4F8] text-[#225577] border-[#C8DCE8]';
       default:
-        return 'bg-stone-900/60 text-stone-300 border-stone-700/40';
+        return 'bg-[#F0F0EC] text-[#555550] border-[#D8D8D0]';
     }
   };
 
@@ -29,8 +50,8 @@ export const MetadataBadge: React.FC<MetadataBadgeProps> = ({ metadata, classNam
     <div className={`flex flex-wrap items-center gap-1.5 ${className}`}>
       {metadata.status && (
         <span
-          className={`inline-flex items-center font-mono uppercase tracking-widest rounded-sm border px-2 py-0.5 ${
-            isSmall ? 'text-[9px]' : 'text-[11px]'
+          className={`inline-flex items-center font-mono uppercase tracking-wider rounded-[2px] border px-2 py-0.5 ${
+            isSmall ? 'text-[9px]' : 'text-[10px]'
           } ${getBadgeStyle(metadata.status)}`}
         >
           {metadata.status}
@@ -38,8 +59,12 @@ export const MetadataBadge: React.FC<MetadataBadgeProps> = ({ metadata, classNam
       )}
       {metadata.tradition && (
         <span
-          className={`inline-flex items-center font-mono uppercase tracking-wider text-parchment-400 bg-obsidian-800/80 border border-saffron-500/20 rounded-sm px-2 py-0.5 ${
-            isSmall ? 'text-[9px]' : 'text-[11px]'
+          className={`inline-flex items-center font-mono uppercase tracking-wider rounded-[2px] px-2 py-0.5 ${
+            isSmall ? 'text-[9px]' : 'text-[10px]'
+          } ${
+            darkTheme
+              ? 'bg-[#1C1C1A] text-[#9E9E98] border border-[#2E2E2A]'
+              : 'bg-[#F4F4F0] text-[#6D6D68] border border-[#E4E4DF]'
           }`}
         >
           {metadata.tradition}
