@@ -72,8 +72,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, onOpenVide
           <div className="lg:col-span-5 relative">
             <div className="relative aspect-[4/5] bg-[#0A0A0A] overflow-hidden border-2 border-[#E2E8F0] shadow-2xl group">
               <img
-                src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1400&q=90"
-                alt="Monumental Buddhist Stone Sculpture in Temple Light"
+                src="/images/buddhas/gautama-hero.jpg"
+                alt="8K Monumental Stone Sculpture of Gautama Buddha in Serene Dhyāna Mudrā"
                 className="w-full h-full object-cover object-center filter brightness-100 contrast-105 group-hover:scale-105 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-transparent to-transparent" />

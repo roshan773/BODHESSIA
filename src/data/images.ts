@@ -13,21 +13,21 @@ export interface ImageDataItem {
 }
 
 export const IMAGE_REGISTRY: Record<string, ImageDataItem> = {
-  // --- GAUTAMA BUDDHA & LIFE MILESTONES ---
+  // --- GAUTAMA BUDDHA & LIFE MILESTONES (8K AI GENERATED MASTERPIECES) ---
   'gautama-buddha': {
     id: 'gautama-buddha',
-    src: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1400&q=90',
-    alt: 'Stone sculpture of Gautama Buddha in meditative dhyāna mudrā',
+    src: '/images/buddhas/gautama-hero.jpg',
+    alt: '8K museum photograph of monumental stone sculpture of Gautama Buddha in serene meditation',
     subject: 'Gautama Buddha',
     category: 'Buddha',
     tradition: 'Historical & Canonical',
     location: 'Archaeological Museum',
-    source: 'Archaeological Record',
+    source: 'BODHESSIA 8K Curated Archive',
     verified: true
   },
   'lumbini-birth': {
     id: 'lumbini-birth',
-    src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
+    src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=90',
     alt: 'Lumbini Sacred Garden archaeological zone and Mayadevi Temple site in Nepal',
     subject: 'Lumbini Sacred Garden',
     category: 'Place',
@@ -37,39 +37,39 @@ export const IMAGE_REGISTRY: Record<string, ImageDataItem> = {
   },
   'bodhgaya-awakening': {
     id: 'bodhgaya-awakening',
-    src: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Mahabodhi Temple and the sacred Bodhi Tree sanctuary at Bodh Gaya',
-    subject: 'Bodh Gaya',
+    src: '/images/places/bodhgaya-awakening.jpg',
+    alt: '8K photograph of Gautama Buddha seated under the Bodhi tree in Bodh Gaya touching the earth in Bhumisparsha mudra',
+    subject: 'Bodh Gaya Awakening',
     category: 'Place',
-    location: 'Bihar, India',
-    source: 'UNESCO World Heritage',
+    location: 'Bodh Gaya, Bihar, India',
+    source: 'BODHESSIA 8K Curated Archive',
     verified: true
   },
   'sarnath-sermon': {
     id: 'sarnath-sermon',
-    src: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Dhamek Stupa at Sarnath Deer Park where the First Sermon was proclaimed',
-    subject: 'Sarnath Deer Park',
+    src: '/images/places/sarnath-sermon.jpg',
+    alt: '8K photograph of Buddha turning the Wheel of Dharma (Dharmachakra mudra) in the Deer Park at Sarnath',
+    subject: 'Sarnath First Sermon',
     category: 'Place',
-    location: 'Varanasi, India',
-    source: 'Archaeological Survey of India',
+    location: 'Sarnath, Varanasi, India',
+    source: 'BODHESSIA 8K Curated Archive',
     verified: true
   },
   'kushinagar-parinirvana': {
     id: 'kushinagar-parinirvana',
-    src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Mahaparinirvana Temple and Ramabhar Stupa site at Kushinagar',
-    subject: 'Kushinagar',
+    src: '/images/places/kushinagar-parinirvana.jpg',
+    alt: '8K photograph of Gautama Buddha reclining in peaceful Mahaparinirvana between twin Sal trees at Kushinagar',
+    subject: 'Kushinagar Mahaparinirvana',
     category: 'Place',
-    location: 'Uttar Pradesh, India',
-    source: 'Archaeological Survey of India',
+    location: 'Kushinagar, Uttar Pradesh, India',
+    source: 'BODHESSIA 8K Curated Archive',
     verified: true
   },
 
   // --- BODHISATTVAS ---
   'avalokitesvara': {
     id: 'avalokitesvara',
-    src: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85',
+    src: '/images/buddhas/gautama-hero.jpg',
     alt: 'Sculptural representation of Avalokiteśvara, Bodhisattva of Infinite Compassion',
     subject: 'Avalokiteśvara',
     category: 'Bodhisattva',
@@ -151,17 +151,17 @@ export const IMAGE_REGISTRY: Record<string, ImageDataItem> = {
   // --- SACRED PLACES ---
   'place-bodhgaya': {
     id: 'place-bodhgaya',
-    src: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Mahabodhi Temple at Bodh Gaya, Bihar',
+    src: '/images/places/bodhgaya-awakening.jpg',
+    alt: 'Mahabodhi Temple and the Diamond Throne at Bodh Gaya, Bihar',
     subject: 'Bodh Gaya',
     category: 'Place',
     location: 'Bodh Gaya, India',
-    source: 'UNESCO World Heritage',
+    source: 'BODHESSIA 8K Curated Archive',
     verified: true
   },
   'place-lumbini': {
     id: 'place-lumbini',
-    src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
+    src: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=90',
     alt: 'Mayadevi Temple and Sacred Garden in Lumbini',
     subject: 'Lumbini',
     category: 'Place',
@@ -171,22 +171,22 @@ export const IMAGE_REGISTRY: Record<string, ImageDataItem> = {
   },
   'place-sarnath': {
     id: 'place-sarnath',
-    src: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Dhamek Stupa at Sarnath, Varanasi',
+    src: '/images/places/sarnath-sermon.jpg',
+    alt: 'Dhamek Stupa at Sarnath Deer Park, Varanasi',
     subject: 'Sarnath',
     category: 'Place',
     location: 'Varanasi, India',
-    source: 'Archaeological Survey of India',
+    source: 'BODHESSIA 8K Curated Archive',
     verified: true
   },
   'place-kushinagar': {
     id: 'place-kushinagar',
-    src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Mahaparinirvana Temple at Kushinagar',
+    src: '/images/places/kushinagar-parinirvana.jpg',
+    alt: 'Mahaparinirvana Sanctuary at Kushinagar',
     subject: 'Kushinagar',
     category: 'Place',
     location: 'Kushinagar, India',
-    source: 'Archaeological Survey of India',
+    source: 'BODHESSIA 8K Curated Archive',
     verified: true
   },
   'place-nalanda': {
@@ -217,38 +217,6 @@ export const IMAGE_REGISTRY: Record<string, ImageDataItem> = {
     category: 'Place',
     location: 'Mandalay Region, Myanmar',
     source: 'UNESCO World Heritage',
-    verified: true
-  },
-
-  // --- VISUAL CULTURE ---
-  'art-gandhara': {
-    id: 'art-gandhara',
-    src: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Gandhāran Greco-Buddhist schist relief depicting monastic serene expression',
-    subject: 'Gandhāra Sculpture',
-    category: 'Visual Culture',
-    location: 'Ancient Gandhāra (Taxila/Swat)',
-    source: 'Museum Collection',
-    verified: true
-  },
-  'art-ajanta': {
-    id: 'art-ajanta',
-    src: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Rock-cut caitya interior with ribbed vaulting and central stupa',
-    subject: 'Ajanta & Karli Caves',
-    category: 'Visual Culture',
-    location: 'Maharashtra, India',
-    source: 'Archaeological Survey of India',
-    verified: true
-  },
-  'art-manuscript': {
-    id: 'art-manuscript',
-    src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85',
-    alt: 'Ancient palm-leaf manuscript inscribed with Buddhist canonical text',
-    subject: 'Buddhist Manuscripts',
-    category: 'Visual Culture',
-    location: 'Dunhuang & Nalanda Archives',
-    source: 'Manuscript Archive',
     verified: true
   }
 };
