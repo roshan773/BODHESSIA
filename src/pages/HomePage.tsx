@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { HeroSection } from '../components/home/HeroSection';
-import { IntroSection } from '../components/home/IntroSection';
-import { KnowledgeIndex } from '../components/home/KnowledgeIndex';
-import { BuddhaTimelinePreview } from '../components/home/BuddhaTimelinePreview';
+import { WhoWasBuddhaSection } from '../components/home/WhoWasBuddhaSection';
+import { LifeOfBuddhaSection } from '../components/home/LifeOfBuddhaSection';
+import { BuddhaJourneySection } from '../components/home/BuddhaJourneySection';
 import { Buddhas28Preview } from '../components/home/Buddhas28Preview';
-import { BodhisattvaSection } from '../components/home/BodhisattvaSection';
 import { DharmaSection } from '../components/home/DharmaSection';
+import { BodhisattvaSection } from '../components/home/BodhisattvaSection';
 import { SymbolsSection } from '../components/home/SymbolsSection';
 import { HistoryPreview } from '../components/home/HistoryPreview';
-import { WorldMapSection } from '../components/home/WorldMapSection';
+import { BuddhistTraditionsSection } from '../components/home/BuddhistTraditionsSection';
+import { BuddhistArtSection } from '../components/home/BuddhistArtSection';
+import { BuddhistArchitectureSection } from '../components/home/BuddhistArchitectureSection';
 import { SacredPlacesSection } from '../components/home/SacredPlacesSection';
-import { VisualCultureSection } from '../components/home/VisualCultureSection';
-import { VideoSection } from '../components/home/VideoSection';
+import { WorldMapSection } from '../components/home/WorldMapSection';
+import { BuddhistTextsSection } from '../components/home/BuddhistTextsSection';
 import { KnowledgeField } from '../components/home/KnowledgeField';
-import { ArchiveTiles } from '../components/home/ArchiveTiles';
 import { WhyBodhessiaSection } from '../components/home/WhyBodhessiaSection';
 import { VideoModal } from '../components/visual/VideoModal';
 import { BuddhaDetail, BodhisattvaDetail, SymbolDetail } from '../types';
@@ -34,68 +35,69 @@ export const HomePage: React.FC<HomePageProps> = ({
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <div className="relative bg-[#F7F7F5]">
-      {/* 01. Modern Asymmetric Hero */}
+    <div className="relative bg-[#F5F2EA]">
+      {/* 01. BUDDHA HERO */}
       <HeroSection
         onNavigate={onNavigate}
         onOpenVideo={() => setIsVideoModalOpen(true)}
       />
 
-      {/* 02. 2500+ Years Statement */}
-      <IntroSection />
+      {/* 02. WHO WAS THE BUDDHA? */}
+      <WhoWasBuddhaSection onNavigate={onNavigate} />
 
-      {/* 03. Knowledge Index */}
-      <KnowledgeIndex onNavigate={onNavigate} />
+      {/* 03. THE LIFE OF GAUTAMA (9 visual chapters) */}
+      <LifeOfBuddhaSection onNavigate={onNavigate} />
 
-      {/* 04. The Buddha */}
-      <BuddhaTimelinePreview onNavigate={onNavigate} />
+      {/* 04. THE JOURNEY OF THE BUDDHA (Interactive pilgrimage geography) */}
+      <BuddhaJourneySection onNavigate={onNavigate} />
 
-      {/* 05. The 28 Buddhas (Signature Dark Section #0A0A0A) */}
+      {/* 05. THE 28 BUDDHAS (Signature Pāli Theravāda chronicle) */}
       <Buddhas28Preview
         onNavigate={onNavigate}
         onSelectBuddha={onSelectBuddha}
       />
 
-      {/* 06. Bodhisattvas */}
+      {/* 06. THE DHARMA (Four Noble Truths, Eightfold Path, Nirvana) */}
+      <DharmaSection onNavigate={onNavigate} />
+
+      {/* 07. BODHISATTVAS (8 Authentic compassionate archetypes) */}
       <BodhisattvaSection
         onNavigate={onNavigate}
         onSelectBodhisattva={onSelectBodhisattva}
       />
 
-      {/* 07. The Dharma */}
-      <DharmaSection onNavigate={onNavigate} />
-
-      {/* 08. Symbols of the Dharma */}
+      {/* 08. BUDDHIST SYMBOLS (Custom SVG visual language) */}
       <SymbolsSection
         onNavigate={onNavigate}
         onSelectSymbol={onSelectSymbol}
       />
 
-      {/* 09. 2,500 Years in Motion */}
+      {/* 09. HISTORY OF BUDDHISM (2,500+ years timeline) */}
       <HistoryPreview onNavigate={onNavigate} />
 
-      {/* 10. Buddhism Across the World (Map Moment) */}
-      <WorldMapSection />
+      {/* 10. BUDDHIST TRADITIONS (Theravāda, Mahāyāna, Vajrayāna) */}
+      <BuddhistTraditionsSection onNavigate={onNavigate} />
 
-      {/* 11. Sacred Places */}
+      {/* 11. THE ART OF BUDDHISM (Sculptures, murals, manuscripts) */}
+      <BuddhistArtSection onNavigate={onNavigate} />
+
+      {/* 12. BUDDHIST ARCHITECTURE (Stūpas, Caityas, Vihāras, Pagodas) */}
+      <BuddhistArchitectureSection onNavigate={onNavigate} />
+
+      {/* 13. SACRED BUDDHIST PLACES (Bodh Gaya, Lumbini, Sarnath, Kushinagar, etc.) */}
       <SacredPlacesSection onNavigate={onNavigate} />
 
-      {/* 12. Visual Culture (Sculpture, Architecture, Manuscripts) */}
-      <VisualCultureSection onNavigate={onNavigate} />
+      {/* 14. BUDDHISM ACROSS ASIA (Silk Road & Maritime transmission routes) */}
+      <WorldMapSection onNavigate={onNavigate} />
 
-      {/* 13. Video Experience ("SEE THE WORLD") */}
-      <VideoSection onOpenVideo={() => setIsVideoModalOpen(true)} />
+      {/* 15. BUDDHIST TEXTS & SCRIPTURES (Pāli Canon, Sūtras, Tantras) */}
+      <BuddhistTextsSection onNavigate={onNavigate} />
 
-      {/* 14. Signature Moment: The Knowledge Field */}
+      {/* 16. EXPLORE BODHESSIA & WHY BODHESSIA */}
       <KnowledgeField onNavigate={onNavigate} />
+      <WhyBodhessiaSection onNavigate={onNavigate} />
 
-      {/* 15. Transition: There is More to Discover */}
-      <ArchiveTiles onNavigate={onNavigate} />
-
-      {/* 16. Why Bodhessia? (Editorial Charter & Verification Taxonomy) */}
-      <WhyBodhessiaSection />
-
-      {/* Fullscreen Video Modal */}
+      {/* Optional Video Experience Modal */}
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
