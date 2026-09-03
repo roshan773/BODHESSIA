@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, X, Sparkles, HeartHandshake, BookOpen, Compass, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, X } from 'lucide-react';
 import { BODHISATTVAS } from '../data/bodhisattvas';
 import { BodhisattvaDetail } from '../types';
 import { BodhisattvaCard } from '../components/cards/BodhisattvaCard';
@@ -26,36 +26,34 @@ export const BodhisattvasPage: React.FC<BodhisattvasPageProps> = ({
   };
 
   return (
-    <div className="pt-24 pb-20 bg-obsidian-950 min-h-screen">
+    <div className="pt-24 pb-20 bg-[#F7F7F5] min-h-screen">
       {/* Header Banner */}
-      <div className="py-16 bg-gradient-to-b from-obsidian-900 to-obsidian-950 border-b border-saffron-500/15">
+      <div className="py-16 bg-white border-b border-[#E4E4DF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={() => onNavigate('/')}
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-saffron-400 hover:text-saffron-200 mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#6D6D68] hover:text-[#111111] mb-6 transition-colors"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Museum Portal
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to Portal
           </button>
 
           <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2">
-              <MetadataBadge
-                metadata={{
-                  status: 'Canonical Text',
-                  tradition: 'Mahāyāna & Vajrayāna',
-                  source: 'Prajñāpāramitā / Lotus / Avataṃsaka Sūtras'
-                }}
-                size="md"
-              />
-            </div>
+            <MetadataBadge
+              metadata={{
+                status: 'Canonical Text',
+                tradition: 'Mahāyāna & Vajrayāna',
+                source: 'Prajñāpāramitā / Lotus / Avataṃsaka Sūtras'
+              }}
+              size="md"
+            />
 
-            <h1 className="text-4xl sm:text-6xl font-serif font-bold text-parchment-100">
+            <h1 className="text-4xl sm:text-6xl font-serif font-light text-[#111111]">
               BODHISATTVAS
             </h1>
-            <p className="text-lg font-mono text-saffron-400 italic">
+            <p className="text-base font-mono text-[#B8874A] italic">
               Embodied Archetypes of Infinite Compassion, Wisdom, and Altruistic Vow
             </p>
-            <p className="text-sm sm:text-base text-parchment-300 leading-relaxed font-light">
+            <p className="text-sm sm:text-base text-[#6D6D68] leading-relaxed font-light">
               In Buddhist philosophy, a Bodhisattva is an awakened being motivated by supreme bodhicitta (the compassionate aspiration to attain enlightenment for the liberation of all sentient beings). Rather than entering solitary extinction, they manifest in countless forms to alleviate suffering.
             </p>
           </div>
@@ -77,28 +75,28 @@ export const BodhisattvasPage: React.FC<BodhisattvasPageProps> = ({
 
       {/* Detail Modal */}
       {selectedBodhisattva && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-fadeIn">
-          <div className="relative w-full max-w-3xl bg-obsidian-900 border border-saffron-500/30 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
-            <div className="flex items-center justify-between p-5 border-b border-saffron-500/20 bg-obsidian-950/80">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+          <div className="relative w-full max-w-3xl bg-white border border-[#E4E4DF] shadow-2xl max-h-[90vh] flex flex-col">
+            <div className="flex items-center justify-between p-5 border-b border-[#E4E4DF] bg-[#F7F7F5]">
               <div>
-                <span className="font-mono text-xs text-saffron-400 font-bold uppercase tracking-wider block">
+                <span className="font-mono text-xs text-[#B8874A] font-bold uppercase tracking-wider block">
                   {selectedBodhisattva.quality}
                 </span>
-                <span className="text-xl font-serif font-bold text-parchment-100">
+                <span className="text-xl font-serif font-bold text-[#111111]">
                   {selectedBodhisattva.name}
                 </span>
               </div>
               <button
                 onClick={() => setSelectedBodhisattva(null)}
-                className="p-1.5 rounded-lg text-parchment-400 hover:text-parchment-100 hover:bg-obsidian-800"
+                className="p-1.5 hover:bg-neutral-200 transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 text-[#111111]" />
               </button>
             </div>
 
             <div className="p-6 md:p-8 overflow-y-auto space-y-6">
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-1/3 relative aspect-[3/4] rounded-xl overflow-hidden bg-obsidian-950 shrink-0">
+                <div className="md:w-1/3 relative aspect-[3/4] bg-[#111111] shrink-0">
                   <img
                     src={selectedBodhisattva.imageUrl}
                     alt={selectedBodhisattva.name}
@@ -108,24 +106,24 @@ export const BodhisattvasPage: React.FC<BodhisattvasPageProps> = ({
 
                 <div className="space-y-3 flex-1">
                   <div>
-                    <h2 className="text-3xl font-serif font-bold text-parchment-100">
+                    <h2 className="text-3xl font-serif font-bold text-[#111111]">
                       {selectedBodhisattva.name}
                     </h2>
-                    <p className="text-xs font-mono text-saffron-400 italic">
+                    <p className="text-xs font-mono text-[#B8874A] italic">
                       {selectedBodhisattva.sanskritName}
                     </p>
                   </div>
 
-                  <p className="text-sm text-parchment-300 leading-relaxed font-light">
+                  <p className="text-sm text-[#6D6D68] leading-relaxed font-light">
                     {selectedBodhisattva.description}
                   </p>
 
                   {selectedBodhisattva.mantra && (
-                    <div className="p-3 rounded-lg bg-obsidian-950 border border-saffron-500/20">
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-saffron-400 block mb-0.5">
+                    <div className="p-3 bg-[#F7F7F5] border border-[#E4E4DF]">
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#B8874A] block mb-0.5">
                         Sacred Mantra
                       </span>
-                      <span className="text-sm font-mono text-saffron-200 font-semibold">
+                      <span className="text-sm font-mono text-[#111111] font-semibold">
                         {selectedBodhisattva.mantra}
                       </span>
                     </div>
@@ -134,44 +132,44 @@ export const BodhisattvasPage: React.FC<BodhisattvasPageProps> = ({
               </div>
 
               {/* Vows */}
-              <div className="p-4 rounded-xl bg-obsidian-950 border-l-2 border-saffron-500 space-y-1">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-saffron-400 flex items-center gap-1.5">
-                  <HeartHandshake className="w-3.5 h-3.5" /> Boundless Compassionate Vow
+              <div className="p-4 bg-[#F7F7F5] border-l-2 border-[#B8874A] space-y-1">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#B8874A] block font-semibold">
+                  Boundless Altruistic Vow
                 </span>
-                <p className="text-sm font-serif italic text-parchment-200">
+                <p className="text-sm font-serif italic text-[#111111]">
                   "{selectedBodhisattva.vows}"
                 </p>
               </div>
 
               {/* Iconography & Sacred Abode */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
-                <div className="p-4 rounded-xl bg-obsidian-950 border border-saffron-500/10 space-y-2">
-                  <span className="text-saffron-400 uppercase tracking-wider block font-semibold">
+                <div className="p-4 bg-[#F7F7F5] border border-[#E4E4DF] space-y-2">
+                  <span className="text-[#111111] uppercase tracking-wider block font-semibold">
                     Key Iconography
                   </span>
-                  <ul className="space-y-1 text-parchment-300">
+                  <ul className="space-y-1 text-[#6D6D68]">
                     {selectedBodhisattva.iconography.map((item, idx) => (
                       <li key={idx}>• {item}</li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="p-4 rounded-xl bg-obsidian-950 border border-saffron-500/10 space-y-2">
-                  <span className="text-saffron-400 uppercase tracking-wider block font-semibold">
-                    Canonical & Regional Sources
+                <div className="p-4 bg-[#F7F7F5] border border-[#E4E4DF] space-y-2">
+                  <span className="text-[#111111] uppercase tracking-wider block font-semibold">
+                    Canonical Sources
                   </span>
-                  <p className="text-parchment-300 font-serif not-italic">
+                  <p className="text-[#6D6D68] font-sans">
                     <strong>Scripture:</strong> {selectedBodhisattva.canonicalSource}
                   </p>
                   {selectedBodhisattva.abode && (
-                    <p className="text-parchment-300 font-serif not-italic">
+                    <p className="text-[#6D6D68] font-sans">
                       <strong>Sacred Abode:</strong> {selectedBodhisattva.abode}
                     </p>
                   )}
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-saffron-500/15 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-parchment-400">
+              <div className="pt-2 border-t border-[#E4E4DF] flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#6D6D68]">
                 <MetadataBadge metadata={selectedBodhisattva.metadata} size="sm" />
                 <span>Source: {selectedBodhisattva.metadata.source}</span>
               </div>

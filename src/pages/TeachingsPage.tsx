@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, X, Sparkles, BookOpen, Layers, Info } from 'lucide-react';
+import { ArrowLeft, X, ArrowRight } from 'lucide-react';
 import { TEACHINGS } from '../data/teachings';
 import { TeachingDetail } from '../types';
 import { TeachingCard } from '../components/cards/TeachingCard';
@@ -22,37 +22,35 @@ export const TeachingsPage: React.FC<TeachingsPageProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="pt-24 pb-20 bg-obsidian-950 min-h-screen">
+    <div className="pt-24 pb-20 bg-[#F7F7F5] min-h-screen">
       {/* Header Banner */}
-      <div className="py-16 bg-gradient-to-b from-obsidian-900 to-obsidian-950 border-b border-saffron-500/15">
+      <div className="py-16 bg-white border-b border-[#E4E4DF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={() => onNavigate('/')}
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-saffron-400 hover:text-saffron-200 mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#6D6D68] hover:text-[#111111] mb-6 transition-colors"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Museum Portal
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to Portal
           </button>
 
           <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2">
-              <MetadataBadge
-                metadata={{
-                  status: 'Canonical Text',
-                  tradition: 'Cross-Tradition Philosophy',
-                  source: 'Nikāyas & Mahāyāna Canons'
-                }}
-                size="md"
-              />
-            </div>
+            <MetadataBadge
+              metadata={{
+                status: 'Canonical Text',
+                tradition: 'Cross-Tradition Philosophy',
+                source: 'Nikāyas & Mahāyāna Canons'
+              }}
+              size="md"
+            />
 
-            <h1 className="text-4xl sm:text-6xl font-serif font-bold text-parchment-100">
+            <h1 className="text-4xl sm:text-6xl font-serif font-light text-[#111111]">
               THE DHARMA
             </h1>
-            <p className="text-lg font-mono text-saffron-400 italic">
+            <p className="text-base font-mono text-[#B8874A] italic">
               The Living Cosmic Law and Diagnostic Science of the Human Mind
             </p>
-            <p className="text-sm sm:text-base text-parchment-300 leading-relaxed font-light">
-              The Buddha compared the Dharma not to dogmatic creed, but to a raft (Kulla) constructed to cross the flood of suffering to the safe other shore of Nirvana. Once the shore is reached, even the raft is relinquished.
+            <p className="text-sm sm:text-base text-[#6D6D68] leading-relaxed font-light">
+              The Buddha compared the Dharma not to a dogmatic creed, but to a practical raft constructed to cross the turbulent flood of existential suffering to the secure other shore of Nirvana.
             </p>
           </div>
         </div>
@@ -62,10 +60,10 @@ export const TeachingsPage: React.FC<TeachingsPageProps> = ({ onNavigate }) => {
         {/* Interactive Model 1: The Noble Eightfold Path */}
         <div>
           <div className="max-w-2xl mb-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-saffron-400">
-              Interactive Model 01
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block">
+              INTERACTIVE DIAGRAM 01
             </span>
-            <h2 className="text-3xl font-serif font-bold text-parchment-100">
+            <h2 className="text-3xl font-serif font-light text-[#111111]">
               The Noble Eightfold Path Wheel (Ariya Magga)
             </h2>
           </div>
@@ -75,10 +73,10 @@ export const TeachingsPage: React.FC<TeachingsPageProps> = ({ onNavigate }) => {
         {/* Interactive Model 2: 12 Nidānas */}
         <div>
           <div className="max-w-2xl mb-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-saffron-400">
-              Interactive Model 02
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block">
+              INTERACTIVE DIAGRAM 02
             </span>
-            <h2 className="text-3xl font-serif font-bold text-parchment-100">
+            <h2 className="text-3xl font-serif font-light text-[#111111]">
               Dependent Origination Chain (Paṭiccasamuppāda)
             </h2>
           </div>
@@ -88,13 +86,13 @@ export const TeachingsPage: React.FC<TeachingsPageProps> = ({ onNavigate }) => {
         {/* Complete Core Doctrinal Cards */}
         <div>
           <div className="max-w-2xl mb-8">
-            <span className="text-xs font-mono uppercase tracking-widest text-saffron-400">
-              Curated Doctrine Compendium
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block">
+              DOCTRINAL COMPENDIUM
             </span>
-            <h2 className="text-3xl font-serif font-bold text-parchment-100">
+            <h2 className="text-3xl font-serif font-light text-[#111111]">
               The Seven Pillars of Buddhist Thought
             </h2>
-            <p className="text-xs sm:text-sm text-parchment-400 mt-1">
+            <p className="text-xs sm:text-sm text-[#6D6D68] mt-1 font-light">
               Select any doctrine to inspect its canonical breakdown and scriptural passages.
             </p>
           </div>
@@ -113,44 +111,44 @@ export const TeachingsPage: React.FC<TeachingsPageProps> = ({ onNavigate }) => {
 
       {/* Detail Modal */}
       {selectedTeaching && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-fadeIn">
-          <div className="relative w-full max-w-3xl bg-obsidian-900 border border-saffron-500/30 rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
-            <div className="flex items-center justify-between p-5 border-b border-saffron-500/20 bg-obsidian-950/80">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+          <div className="relative w-full max-w-3xl bg-white border border-[#E4E4DF] shadow-2xl max-h-[90vh] flex flex-col">
+            <div className="flex items-center justify-between p-5 border-b border-[#E4E4DF] bg-[#F7F7F5]">
               <div>
-                <span className="font-mono text-xs text-saffron-400 font-bold uppercase tracking-wider block">
+                <span className="font-mono text-xs text-[#B8874A] font-bold uppercase tracking-wider block">
                   {selectedTeaching.category}
                 </span>
-                <span className="text-xl font-serif font-bold text-parchment-100">
+                <span className="text-xl font-serif font-bold text-[#111111]">
                   {selectedTeaching.title}
                 </span>
               </div>
               <button
                 onClick={() => setSelectedTeaching(null)}
-                className="p-1.5 rounded-lg text-parchment-400 hover:text-parchment-100 hover:bg-obsidian-800"
+                className="p-1.5 hover:bg-neutral-200 transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 text-[#111111]" />
               </button>
             </div>
 
             <div className="p-6 md:p-8 overflow-y-auto space-y-6">
               <div>
-                <h2 className="text-3xl font-serif font-bold text-parchment-100">
+                <h2 className="text-3xl font-serif font-bold text-[#111111]">
                   {selectedTeaching.title}
                 </h2>
-                <p className="text-xs font-mono text-saffron-400 italic mt-0.5">
+                <p className="text-xs font-mono text-[#B8874A] italic mt-0.5">
                   {selectedTeaching.paliName}
                 </p>
-                <p className="text-sm text-parchment-300 leading-relaxed font-light mt-3">
+                <p className="text-sm text-[#6D6D68] leading-relaxed font-light mt-3">
                   {selectedTeaching.summary}
                 </p>
               </div>
 
               {selectedTeaching.metaphorOrParadigm && (
-                <div className="p-4 rounded-xl bg-obsidian-950 border border-saffron-500/20 space-y-1">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-saffron-400 block font-semibold">
+                <div className="p-4 bg-[#F7F7F5] border border-[#E4E4DF] space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#B8874A] block font-semibold">
                     Core Conceptual Paradigm
                   </span>
-                  <p className="text-xs sm:text-sm text-parchment-200">
+                  <p className="text-xs sm:text-sm text-[#111111]">
                     {selectedTeaching.metaphorOrParadigm}
                   </p>
                 </div>
@@ -158,30 +156,30 @@ export const TeachingsPage: React.FC<TeachingsPageProps> = ({ onNavigate }) => {
 
               {/* Key Components */}
               <div className="space-y-3">
-                <h4 className="text-xs font-mono uppercase tracking-widest text-saffron-400 font-semibold">
-                  Principal Analytical Components
+                <h4 className="text-xs font-mono uppercase tracking-widest text-[#111111] font-semibold">
+                  Principal Components
                 </h4>
                 <div className="space-y-3">
                   {selectedTeaching.keyComponents.map((comp, idx) => (
                     <div
                       key={idx}
-                      className="p-4 rounded-xl bg-obsidian-950/70 border border-saffron-500/10 space-y-1.5"
+                      className="p-4 bg-[#F7F7F5] border border-[#E4E4DF] space-y-1.5"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-serif font-bold text-parchment-100">
+                        <span className="text-sm font-serif font-bold text-[#111111]">
                           {comp.title}
                         </span>
                         {comp.paliTerm && (
-                          <span className="text-xs font-mono text-saffron-400/80">
+                          <span className="text-xs font-mono text-[#B8874A]">
                             {comp.paliTerm}
                           </span>
                         )}
                       </div>
-                      <p className="text-xs sm:text-sm text-parchment-300 leading-relaxed font-light">
+                      <p className="text-xs sm:text-sm text-[#6D6D68] leading-relaxed font-light">
                         {comp.explanation}
                       </p>
                       {comp.practicalApplication && (
-                        <p className="text-xs text-emerald-400/90 font-mono pt-1">
+                        <p className="text-xs text-[#244B38] font-mono pt-1">
                           ↳ Practice: {comp.practicalApplication}
                         </p>
                       )}
@@ -191,17 +189,17 @@ export const TeachingsPage: React.FC<TeachingsPageProps> = ({ onNavigate }) => {
               </div>
 
               {selectedTeaching.canonicalPassage && (
-                <blockquote className="p-4 rounded-xl bg-obsidian-950 border-l-2 border-saffron-500 space-y-1">
-                  <p className="text-xs sm:text-sm font-serif italic text-parchment-200 leading-relaxed">
+                <blockquote className="p-4 bg-[#F7F7F5] border-l-2 border-[#B8874A] space-y-1">
+                  <p className="text-xs sm:text-sm font-serif italic text-[#111111] leading-relaxed">
                     "{selectedTeaching.canonicalPassage.text}"
                   </p>
-                  <span className="text-[10px] font-mono text-saffron-400/80 block not-italic pt-1">
+                  <span className="text-[10px] font-mono text-[#6D6D68] block not-italic pt-1">
                     — {selectedTeaching.canonicalPassage.source}
                   </span>
                 </blockquote>
               )}
 
-              <div className="pt-2 border-t border-saffron-500/15 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-parchment-400">
+              <div className="pt-2 border-t border-[#E4E4DF] flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#6D6D68]">
                 <MetadataBadge metadata={selectedTeaching.metadata} size="sm" />
                 <span>Source: {selectedTeaching.metadata.source}</span>
               </div>

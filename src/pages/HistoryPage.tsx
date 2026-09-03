@@ -10,37 +10,35 @@ interface HistoryPageProps {
 
 export const HistoryPage: React.FC<HistoryPageProps> = ({ onNavigate }) => {
   return (
-    <div className="pt-24 pb-20 bg-obsidian-950 min-h-screen">
+    <div className="pt-24 pb-20 bg-[#F7F7F5] min-h-screen">
       {/* Header Banner */}
-      <div className="py-16 bg-gradient-to-b from-obsidian-900 to-obsidian-950 border-b border-saffron-500/15">
+      <div className="py-16 bg-white border-b border-[#E4E4DF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={() => onNavigate('/')}
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-saffron-400 hover:text-saffron-200 mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#6D6D68] hover:text-[#111111] mb-6 transition-colors"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Museum Portal
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to Portal
           </button>
 
           <div className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-2">
-              <MetadataBadge
-                metadata={{
-                  status: 'Historical Record',
-                  tradition: 'Pan-Asian & Global Transmission',
-                  source: 'Epigraphy, Rock Edicts & Academic Historiography'
-                }}
-                size="md"
-              />
-            </div>
+            <MetadataBadge
+              metadata={{
+                status: 'Historical Record',
+                tradition: 'Pan-Asian & Global Transmission',
+                source: 'Epigraphy, Rock Edicts & Academic Historiography'
+              }}
+              size="md"
+            />
 
-            <h1 className="text-4xl sm:text-6xl font-serif font-bold text-parchment-100">
+            <h1 className="text-4xl sm:text-6xl font-serif font-light text-[#111111]">
               A JOURNEY THROUGH TIME
             </h1>
-            <p className="text-lg font-mono text-saffron-400 italic">
-              2,500+ Years of Historical Transmission: From Ancient Magadha to the Global Era
+            <p className="text-base font-mono text-[#B8874A] italic">
+              2,500+ Years of Historical Transmission: From Ancient Magadha to the Modern World
             </p>
-            <p className="text-sm sm:text-base text-parchment-300 leading-relaxed font-light">
-              Follow the diffusion of Buddhist philosophy, monastic universities, rock-cut architecture, and living traditions across ancient trade corridors: the Silk Road, the maritime spice networks, the trans-Himalayan passes, and modern global dialogue.
+            <p className="text-sm sm:text-base text-[#6D6D68] leading-relaxed font-light">
+              Follow the diffusion of Buddhist philosophy, monastic universities, rock-cut architecture, and living traditions across ancient trade corridors: the Silk Road, maritime networks, trans-Himalayan passes, and modern global dialogue.
             </p>
           </div>
         </div>
@@ -50,10 +48,10 @@ export const HistoryPage: React.FC<HistoryPageProps> = ({ onNavigate }) => {
         {/* Interactive World Map Transmission Route */}
         <div>
           <div className="max-w-2xl mb-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-saffron-400">
-              Interactive Geographic Cartography
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block">
+              GEOGRAPHIC CARTOGRAPHY
             </span>
-            <h2 className="text-3xl font-serif font-bold text-parchment-100">
+            <h2 className="text-3xl font-serif font-light text-[#111111]">
               A Teaching That Traveled
             </h2>
           </div>
@@ -63,10 +61,10 @@ export const HistoryPage: React.FC<HistoryPageProps> = ({ onNavigate }) => {
         {/* 12 Historical Eras Chronological Timeline */}
         <div>
           <div className="max-w-2xl mb-8">
-            <span className="text-xs font-mono uppercase tracking-widest text-saffron-400">
-              Chronological Historical Corpus
+            <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#6D6D68] block">
+              CHRONOLOGICAL TIMELINE
             </span>
-            <h2 className="text-3xl font-serif font-bold text-parchment-100">
+            <h2 className="text-3xl font-serif font-light text-[#111111]">
               The Twelve Epochs of Buddhist Civilization
             </h2>
           </div>
@@ -75,27 +73,27 @@ export const HistoryPage: React.FC<HistoryPageProps> = ({ onNavigate }) => {
             {HISTORY_ERAS.map((era) => (
               <div
                 key={era.id}
-                className="glass-card rounded-2xl p-6 sm:p-8 border-saffron-500/15 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start hover:border-saffron-500/35 transition-all"
+                className="bg-white border border-[#E4E4DF] hover:border-[#B8874A] p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start transition-all"
               >
                 {/* Left metadata & image */}
                 <div className="lg:col-span-4 space-y-4">
-                  <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-obsidian-950">
+                  <div className="relative aspect-[16/10] bg-[#111111] overflow-hidden">
                     <img
                       src={era.imageUrl}
                       alt={era.title}
                       loading="lazy"
                       className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute top-3 left-3 bg-obsidian-950/80 px-2.5 py-0.5 rounded text-xs font-mono text-saffron-400 font-bold border border-saffron-500/20">
+                    <div className="absolute top-3 left-3 bg-white/95 px-2.5 py-0.5 text-xs font-mono font-bold text-[#111111] border border-[#E4E4DF]">
                       {era.era}
                     </div>
                   </div>
 
-                  <div className="space-y-1 text-xs font-mono text-parchment-400">
-                    <div className="flex items-center gap-1.5 text-saffron-400">
+                  <div className="space-y-1 text-xs font-mono text-[#6D6D68]">
+                    <div className="flex items-center gap-1.5 text-[#B8874A]">
                       <Calendar className="w-3.5 h-3.5" /> {era.period}
                     </div>
-                    <div className="flex items-center gap-1.5 text-parchment-300">
+                    <div className="flex items-center gap-1.5 text-[#111111]">
                       <MapPin className="w-3.5 h-3.5" /> {era.region}
                     </div>
                   </div>
@@ -106,27 +104,27 @@ export const HistoryPage: React.FC<HistoryPageProps> = ({ onNavigate }) => {
                 {/* Right narrative content */}
                 <div className="lg:col-span-8 space-y-4">
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-parchment-100">
+                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#111111]">
                       {era.title}
                     </h3>
-                    <p className="text-xs font-mono text-saffron-400/90 mt-0.5">
+                    <p className="text-xs font-mono text-[#B8874A] mt-0.5">
                       {era.subtitle}
                     </p>
                   </div>
 
-                  <p className="text-sm text-parchment-300 leading-relaxed font-light">
+                  <p className="text-sm text-[#6D6D68] leading-relaxed font-light">
                     {era.description}
                   </p>
 
                   {/* Key Events */}
-                  <div className="space-y-2 pt-2 border-t border-saffron-500/10">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-saffron-400 block font-semibold">
-                      Pivotal Historical Developments
+                  <div className="space-y-2 pt-2 border-t border-[#E4E4DF]">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#111111] block font-semibold">
+                      Pivotal Developments
                     </span>
-                    <ul className="space-y-1 text-xs text-parchment-300 font-sans">
+                    <ul className="space-y-1 text-xs text-[#6D6D68] font-sans">
                       {era.keyEvents.map((ev, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className="text-saffron-400 font-mono mt-0.5">•</span>
+                          <span className="text-[#B8874A] font-mono mt-0.5">•</span>
                           <span>{ev}</span>
                         </li>
                       ))}
@@ -134,14 +132,14 @@ export const HistoryPage: React.FC<HistoryPageProps> = ({ onNavigate }) => {
                   </div>
 
                   {/* Figures and Sites */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-mono text-parchment-400">
-                    <div className="p-3 rounded bg-obsidian-950/80 border border-saffron-500/10">
-                      <span className="text-saffron-400 text-[10px] uppercase block mb-1">Key Figures</span>
-                      <span className="text-parchment-200">{era.keyFigures.join(', ')}</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-mono text-[#6D6D68]">
+                    <div className="p-3 bg-[#F7F7F5] border border-[#E4E4DF]">
+                      <span className="text-[#B8874A] text-[10px] uppercase block mb-1">Key Figures</span>
+                      <span className="text-[#111111]">{era.keyFigures.join(', ')}</span>
                     </div>
-                    <div className="p-3 rounded bg-obsidian-950/80 border border-saffron-500/10">
-                      <span className="text-saffron-400 text-[10px] uppercase block mb-1">Monumental Centers</span>
-                      <span className="text-parchment-200">{era.monumentalSites.join(', ')}</span>
+                    <div className="p-3 bg-[#F7F7F5] border border-[#E4E4DF]">
+                      <span className="text-[#B8874A] text-[10px] uppercase block mb-1">Monumental Centers</span>
+                      <span className="text-[#111111]">{era.monumentalSites.join(', ')}</span>
                     </div>
                   </div>
                 </div>

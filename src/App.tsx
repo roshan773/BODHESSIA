@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { AudioProvider } from './context/AudioContext';
-import { ParticleCanvas } from './components/visual/ParticleCanvas';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { SearchModal } from './components/layout/SearchModal';
 
-// Pages
 import { HomePage } from './pages/HomePage';
 import { BuddhaPage } from './pages/BuddhaPage';
 import { Buddhas28Page } from './pages/Buddhas28Page';
@@ -15,97 +13,93 @@ import { SymbolsPage } from './pages/SymbolsPage';
 import { HistoryPage } from './pages/HistoryPage';
 import { AboutPage } from './pages/AboutPage';
 
-// Types
 import { BuddhaDetail, BodhisattvaDetail, SymbolDetail } from './types';
 
-export const App: React.FC = () => {
-  const [currentRoute, setCurrentRoute] = useState<string>(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash && ['/', '/buddha', '/28-buddhas', '/bodhisattvas', '/teachings', '/symbols', '/history', '/about'].includes(hash)) {
-      return hash;
-    }
-    const path = window.location.pathname;
-    if (path && ['/', '/buddha', '/28-buddhas', '/bodhisattvas', '/teachings', '/symbols', '/history', '/about'].includes(path)) {
-      return path;
-    }
-    return '/';
-  });
+export function App() {
+  const [currentRoute, setCurrentRoute] = useState<string>('/');
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [selectedBuddhaForPage, setSelectedBuddhaForPage] = useState<BuddhaDetail | null>(null);
+  const [selectedBodhisattvaForPage, setSelectedBodhisattvaForPage] = useState<BodhisattvaDetail | null>(null);
+  const [selectedSymbolForPage, setSelectedSymbolForPage] = useState<SymbolDetail | null>(null);
 
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [selectedBuddhaDetail, setSelectedBuddhaDetail] = useState<BuddhaDetail | null>(null);
-  const [selectedBodhisattvaDetail, setSelectedBodhisattvaDetail] = useState<BodhisattvaDetail | null>(null);
-  const [selectedSymbolDetail, setSelectedSymbolDetail] = useState<SymbolDetail | null>(null);
-
-  // Sync route with browser hash / history
-  const navigate = (route: string) => {
-    setCurrentRoute(route);
-    window.location.hash = route;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+  // Hash-based simple router
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '') || '/';
       setCurrentRoute(hash);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    if (!window.location.hash) {
+      window.location.hash = '#/';
+    } else {
+      handleHashChange();
+    }
+
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const handleSelectBuddha = (buddha: BuddhaDetail) => {
-    setSelectedBuddhaDetail(buddha);
-    navigate(buddha.number === 28 ? '/buddha' : '/28-buddhas');
+  const handleNavigate = (route: string) => {
+    window.location.hash = `#${route}`;
+    setCurrentRoute(route);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSelectBodhisattva = (bodhisattva: BodhisattvaDetail) => {
-    setSelectedBodhisattvaDetail(bodhisattva);
-    navigate('/bodhisattvas');
+  const handleSelectBuddhaFromHome = (buddha: BuddhaDetail) => {
+    setSelectedBuddhaForPage(buddha);
+    handleNavigate('/28-buddhas');
   };
 
-  const handleSelectSymbol = (symbol: SymbolDetail) => {
-    setSelectedSymbolDetail(symbol);
-    navigate('/symbols');
+  const handleSelectBodhisattvaFromHome = (bodhisattva: BodhisattvaDetail) => {
+    setSelectedBodhisattvaForPage(bodhisattva);
+    handleNavigate('/bodhisattvas');
   };
 
-  const renderActivePage = () => {
+  const handleSelectSymbolFromHome = (symbol: SymbolDetail) => {
+    setSelectedSymbolForPage(symbol);
+    handleNavigate('/symbols');
+  };
+
+  const renderPage = () => {
     switch (currentRoute) {
       case '/buddha':
-        return <BuddhaPage onNavigate={navigate} />;
+        return <BuddhaPage onNavigate={handleNavigate} />;
       case '/28-buddhas':
         return (
           <Buddhas28Page
-            onNavigate={navigate}
-            initialSelectedBuddha={selectedBuddhaDetail}
+            onNavigate={handleNavigate}
+            initialSelectedBuddha={selectedBuddhaForPage}
           />
         );
       case '/bodhisattvas':
         return (
           <BodhisattvasPage
-            onNavigate={navigate}
-            initialSelectedBodhisattva={selectedBodhisattvaDetail}
+            onNavigate={handleNavigate}
+            initialSelectedBodhisattva={selectedBodhisattvaForPage}
           />
         );
       case '/teachings':
-        return <TeachingsPage onNavigate={navigate} />;
+        return <TeachingsPage onNavigate={handleNavigate} />;
       case '/symbols':
         return (
           <SymbolsPage
-            onNavigate={navigate}
-            initialSelectedSymbol={selectedSymbolDetail}
+            onNavigate={handleNavigate}
+            initialSelectedSymbol={selectedSymbolForPage}
           />
         );
       case '/history':
-        return <HistoryPage onNavigate={navigate} />;
+        return <HistoryPage onNavigate={handleNavigate} />;
       case '/about':
-        return <AboutPage onNavigate={navigate} />;
+        return <AboutPage onNavigate={handleNavigate} />;
       case '/':
       default:
         return (
           <HomePage
-            onNavigate={navigate}
-            onSelectBuddha={handleSelectBuddha}
-            onSelectBodhisattva={handleSelectBodhisattva}
-            onSelectSymbol={handleSelectSymbol}
+            onNavigate={handleNavigate}
+            onSelectBuddha={handleSelectBuddhaFromHome}
+            onSelectBodhisattva={handleSelectBodhisattvaFromHome}
+            onSelectSymbol={handleSelectSymbolFromHome}
           />
         );
     }
@@ -113,33 +107,31 @@ export const App: React.FC = () => {
 
   return (
     <AudioProvider>
-      <div className="relative min-h-screen bg-obsidian-950 text-parchment-100 flex flex-col selection:bg-saffron-500/30 selection:text-parchment-100">
-        {/* Ambient Stardust Particles Canvas */}
-        <ParticleCanvas />
-
-        {/* Global Floating Navigation */}
+      <div className="min-h-screen flex flex-col bg-[#F7F7F5] text-[#111111] selection:bg-[#B8874A] selection:text-white">
+        {/* Modern Floating Header Navigation */}
         <Navbar
           activeRoute={currentRoute}
-          onNavigate={navigate}
+          onNavigate={handleNavigate}
           onOpenSearch={() => setIsSearchOpen(true)}
         />
 
-        {/* Dynamic Page Routing View */}
-        <main className="flex-1 relative z-10">
-          {renderActivePage()}
+        {/* Dynamic Page Content */}
+        <main className="flex-1">
+          {renderPage()}
         </main>
 
-        {/* Museum Footer */}
-        <Footer onNavigate={navigate} />
+        {/* Modern Oversized Footer */}
+        <Footer onNavigate={handleNavigate} />
 
-        {/* Global Search Modal */}
+        {/* Global Full-Screen Search Overlay */}
         <SearchModal
           isOpen={isSearchOpen}
           onClose={() => setIsSearchOpen(false)}
-          onNavigate={navigate}
+          onNavigate={handleNavigate}
         />
       </div>
     </AudioProvider>
   );
-};
+}
+
 export default App;
