@@ -22,7 +22,7 @@ export const BODHISATTVAS: BodhisattvaDetail[] = [
     description: 'The archetype of boundless compassion. In Sanskrit, the name translates to "The Lord Who Looks Down with Compassion." He manifests in countless forms across cultures—most famously as Guanyin in East Asia and Chenrezig in Tibetan traditions.',
     vows: 'Should any living being suffer distress or fear, if they but call upon my name with sincerity, they shall be delivered from sorrow.',
     canonicalSource: 'Lotus Sūtra (Chapter 25), Heart Sūtra, Kāraṇḍavyūha Sūtra',
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85',
     metadata: {
       tradition: 'Mahāyāna',
       source: 'Saddharmapuṇḍarīka Sūtra',
@@ -53,190 +53,200 @@ export const BODHISATTVAS: BodhisattvaDetail[] = [
     description: 'Mañjuśrī represents the sharp, cutting edge of Prajñā—insight into the emptiness (Śūnyatā) of all phenomena. Revered as the father and teacher of all Buddhas, he teaches that true wisdom is beyond concepts.',
     vows: 'To illuminate the minds of all beings, cutting away doubts, delusion, and conceptual proliferation.',
     canonicalSource: 'Mañjuśrī-mūla-kalpa, Vimalakīrti Nirdeśa Sūtra, Gandavyūha Sūtra',
-    imageUrl: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=85',
     metadata: {
       tradition: 'Mahāyāna',
       source: 'Prajñāpāramitā Literature',
       status: 'Canonical Text',
+      period: 'c. 1st Century CE onwards',
       region: 'India, China, Tibet'
     },
-    relatedConcepts: ['Prajñā (Wisdom)', 'Śūnyatā (Emptiness)', 'Sword of Discrimination', 'Mount Wutai']
+    relatedConcepts: ['Prajñā (Wisdom)', 'Śūnyatā (Emptiness)', 'Sword of Truth', 'Lion Seat']
   },
   {
     id: 'maitreya',
     name: 'Maitreya',
-    sanskritName: 'Maitreya (मैत्रेय) / Metteyya',
-    chineseName: 'Mílè (彌勒菩薩)',
+    sanskritName: 'Maitreya (मैत्रेय)',
+    chineseName: 'Mílè Púsà (彌勒菩薩)',
     tibetanName: 'Jampa (བྱམས་པ)',
     japaneseName: 'Miroku (弥勒)',
-    quality: 'Universal Loving-Kindness (Mettā) & Future Awakening',
-    embodiment: 'The designated successor to Gautama Buddha, currently presiding in Tuṣita heaven waiting to descend to Earth in a future era.',
+    quality: 'Universal Loving-Kindness (Maitrī / Mettā) & Future Hope',
+    embodiment: 'The next Buddha who currently resides in the Tuṣita heaven awaiting his final rebirth in the human realm.',
     iconography: [
-      'Seated in European posture (Bhadrasana), ready to rise',
-      'Stūpa resting in crown of hair',
-      'Water flask (Kamaṇḍalu) holding nectar of immortality',
-      'Nāgapuṣpa tree flower'
+      'Stupa in his headdress/crown',
+      'Water flask (Kamaṇḍalu) in hand',
+      'Seated in European posture (Bhadrasana) ready to arise',
+      'Dharmachakra mudrā (Teaching gesture)'
     ],
-    tradition: 'Cross-Tradition (Theravāda, Mahāyāna, Vajrayāna)',
+    tradition: 'Pan-Buddhist (Theravāda, Mahāyāna & Vajrayāna)',
     mantra: 'Oṃ Maitri Mahāmaitri Maitreya Svāhā',
-    abode: 'Tuṣita Heaven (Tuṣita Devaloka)',
-    description: 'The only Bodhisattva universally venerated across both Southern Theravāda and Northern Mahāyāna traditions. He represents the living promise that the Dharma will never be permanently extinguished from the cosmos.',
-    vows: 'To manifest supreme awakening in the human world when the previous dispensation has waned, revitalizing loving-kindness in all hearts.',
-    canonicalSource: 'Cakkavatti Sīhanāda Sutta (Dīgha Nikāya 26), Maitreyavyākaraṇa',
-    imageUrl: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=80',
+    abode: 'Tuṣita Devaloka',
+    description: 'The sole Bodhisattva recognized and venerated across all Buddhist lineages, including the Theravāda canon (Cakkavatti Sīhanāda Sutta). Maitreya will descend when the teachings of Gautama Buddha have completely faded.',
+    vows: 'To guide all beings of the future age to complete spiritual awakening with unbounded loving-kindness.',
+    canonicalSource: 'Dīgha Nikāya (DN 26), Maitreyavyākaraṇa, Abhisamayālaṅkāra',
+    imageUrl: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
     metadata: {
       tradition: 'Cross-Tradition',
-      source: 'Dīgha Nikāya & Maitreya-samiti',
+      source: 'Tipiṭaka & Mahāyāna Sūtras',
       status: 'Canonical Text',
-      period: 'Pre-Christian Era to Present',
-      region: 'Pan-Buddhist'
+      period: 'Early Buddhist antiquity',
+      region: 'Universal'
     },
-    relatedConcepts: ['Mettā (Loving-Kindness)', 'Tuṣita Heaven', 'Future Buddha', 'Eschatology & Hope']
+    relatedConcepts: ['Mettā (Loving-kindness)', 'Tuṣita Heaven', 'Future Buddha', 'Messianic Hope']
   },
   {
     id: 'vajrapani',
     name: 'Vajrapāṇi',
     sanskritName: 'Vajrapāṇi (वज्रपाणि)',
     chineseName: 'Jīngāngshǒu (金剛手菩薩)',
-    tibetanName: 'Chana Dorje (ཕྱག་ན་རྡོ་རྗེ)',
-    japaneseName: 'Kongōshu (金剛手)',
-    quality: 'Indomitable Spiritual Power & Protection',
-    embodiment: 'The wielder of the thunderbolt-diamond scepter (Vajra), symbolizing the invincible energy of enlightened mind.',
+    tibetanName: 'Chagna Dorje (ཕྱག་ན་རྡོ་རྗེ)',
+    japaneseName: 'Shukongōshin (執金剛神)',
+    quality: 'Spiritual Power & Relentless Energy (Vīrya / Bala)',
+    embodiment: 'The holder of the diamond thunderbolt, symbolizing the invincible, indestructible force of the enlightened mind.',
     iconography: [
-      'Holding a blazing five-pronged golden Vajra',
-      'Wrathful or dynamic heroic stance (Pratyālīḍha)',
-      'Crown of skulls or jewels surrounded by wisdom flames',
-      'Third eye of penetrative awareness'
+      'Five-pronged diamond thunderbolt (Vajra) raised aloft',
+      'Wrathful or heroic stance (Pratyālīḍha)',
+      'Aureole of blazing cosmic fire',
+      'Tiger skin loincloth and serpent ornaments'
     ],
     tradition: 'Early Buddhism, Mahāyāna & Vajrayāna',
     mantra: 'Oṃ Vajrapāṇi Hūṃ Phaṭ',
-    abode: 'Canglochen (Alakāvatī)',
-    description: 'In early Pāli texts (Ambaṭṭha Sutta), Vajrapāṇi appears as the protective guardian spirit of the Buddha. In Gandharan art, he was frequently depicted with the musculature of Herakles. In Vajrayāna, he is the master of all esoteric mysteries.',
-    vows: 'To protect the lineage of Dharma practitioners and subjugate inner demons of pride, ignorance, and spiritual complacency.',
-    canonicalSource: 'Ambaṭṭha Sutta (DN 3), Guhyasamāja Tantra',
-    imageUrl: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1200&q=80',
+    abode: 'Aḍakavatī Palace',
+    description: 'In early Pāli texts, Vajrapāṇi is the powerful Yakṣa guardian who protects the historical Buddha. In later Vajrayāna traditions, he represents the primordial energy and determination required to shatter mental afflictions (Kleśas).',
+    vows: 'To fiercely safeguard the Dharma and eradicate all spiritual obstacles and inner demons that torment practitioners.',
+    canonicalSource: 'Ambaṭṭha Sutta (DN 3), Guhyasamāja Tantra, Sarvatathāgatatattvasaṃgraha',
+    imageUrl: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1200&q=85',
     metadata: {
-      tradition: 'Vajrayāna & Early Buddhism',
-      source: 'Pāli Canon & Tantric Canons',
+      tradition: 'Vajrayāna & Early Canonical',
+      source: 'Dīgha Nikāya & Tantric Canons',
       status: 'Canonical Text',
-      region: 'Gandhara, India, Tibet'
+      period: 'Ancient Vedic-Buddhist crossover',
+      region: 'Gandhāra, India, Tibet'
     },
-    relatedConcepts: ['Vajra (Indestructibility)', 'Guardian Deities', 'Gandharan Synthesis', 'Inner Strength']
+    relatedConcepts: ['Vajra (Thunderbolt/Diamond)', 'Vīrya (Spiritual Energy)', 'Dharmapāla (Protector)', 'Greco-Buddhist Herakles']
   },
   {
     id: 'ksitigarbha',
     name: 'Kṣitigarbha',
     sanskritName: 'Kṣitigarbha (क्षितिगर्भ)',
     chineseName: 'Dìzàng (地藏菩薩)',
-    tibetanName: 'Sa-yi Nyingpo (ས་ཡི་སྙིང་པོ)',
+    tibetanName: 'Sai Nyingpo (ས་ཡི་སྙིང་པོ)',
     japaneseName: 'Jizō (地蔵)',
-    quality: 'Supreme Vows & Deliverance of Underworld Beings',
-    embodiment: 'The Earth-Store Bodhisattva, who took the colossal vow never to attain Buddhahood until all hell realms are emptied.',
+    quality: 'Unshakeable Patience & Salvation of the Nether Realms',
+    embodiment: 'The Earth Matrix Bodhisattva who swore to remain in the hell realms until every suffering soul is saved.',
     iconography: [
-      'Shaved head wearing simple monastic robes',
-      'Six-ringed monk staff (Khakkhara) that opens realm gates',
-      'Wish-fulfilling jewel (Cintāmaṇi) that illuminates darkness',
-      'Gentle, deeply serene countenance'
+      'Monastic robes and shaven head (the only monk Bodhisattva)',
+      'Six-ringed monk staff (Khakkhara) to awaken souls',
+      'Wish-fulfilling jewel (Cintāmaṇi) shining through darkness',
+      'Accompanied by the mythical hound Diting'
     ],
     tradition: 'Mahāyāna & East Asian Buddhism',
-    mantra: 'Oṃ Ha Ha Ha Vismaye Svāhā',
+    mantra: 'Oṃ Pramardane Svāhā / Na Mo Di Zang Wang Pu Sa',
     abode: 'Mount Jiuhua (Anhui, China)',
-    description: 'Deeply beloved across East Asia, Kṣitigarbha is revered as the guardian of travelers, children, and deceased spirits wandering between rebirth realms. His immense patience mirrors the fertility and unshakeable endurance of the earth.',
-    vows: 'Not until the hells are emptied will I become a Buddha; not until all souls are saved will I achieve Awakening.',
-    canonicalSource: 'Kṣitigarbha Bodhisattva Pūrvapraṇidhāna Sūtra',
-    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80',
+    description: 'Famed for his supreme vow: "Until the hells are empty, I will not become a Buddha; only when all living beings are saved, will I attain Bodhi." He is the protector of travelers, women, and children across Japan and East Asia.',
+    vows: 'Until the hells are completely emptied, I vow not to attain Buddhahood.',
+    canonicalSource: 'Kṣitigarbha Bodhisattva Pūrvapraṇidhāna Sūtra (Earth Store Sūtra)',
+    imageUrl: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=85',
     metadata: {
       tradition: 'Mahāyāna',
       source: 'Kṣitigarbha Sūtra',
       status: 'Canonical Text',
+      period: 'c. 4th Century CE onwards',
       region: 'China, Japan, Korea'
     },
-    relatedConcepts: ['Unshakeable Vow (Praṇidhāna)', 'Six Realms of Saṃsāra', 'Jizō Lore', 'Mount Jiuhua']
+    relatedConcepts: ['Six Realms of Saṃsāra', 'Filial Piety', 'Great Vows (Mahāpraṇidhāna)', 'Jizō Statues']
   },
   {
     id: 'samantabhadra',
     name: 'Samantabhadra',
     sanskritName: 'Samantabhadra (समन्तभद्र)',
     chineseName: 'Pǔxián (普賢菩薩)',
-    tibetanName: 'Kuntuzangpo (ཀུན་ཏུ་བཟང་པོ)',
+    tibetanName: 'Küntu Zangpo (ཀུན་ཏུ་བཟང་པོ)',
     japaneseName: 'Fugen (普賢)',
-    quality: 'Universal Action & Boundless Aspiration',
-    embodiment: 'The personification of active practice, practical application of wisdom, and cosmic vows.',
+    quality: 'Universal Action & Boundless Conduct (Caryā)',
+    embodiment: 'The personification of practical ethical action and the dedication of all merit to the enlightenment of all beings.',
     iconography: [
-      'Riding a magnificent white elephant with six tusks (symbolizing six pāramitās)',
-      'Holding a lotus topped with a jewel or wish-granting scroll',
-      'Regal robes of deep emerald or gold'
+      'Mounted upon a majestic six-tusked white elephant',
+      'Lotus holding a wish-granting jewel or scroll',
+      'Crown of five Dhyāni Buddhas',
+      'Calm, regal ceremonial stance'
     ],
     tradition: 'Mahāyāna & Vajrayāna',
-    mantra: 'Oṃ Samantabhadra Mahākaruṇā Hūṃ',
+    mantra: 'Oṃ Samantabhadra Mahāmāya Svāhā',
     abode: 'Mount Emei (Sichuan, China)',
-    description: 'Together with Śākyamuni and Mañjuśrī, Samantabhadra forms the Shakyamuni Trinity. His Ten Great Vows form the culmination of the Avataṃsaka Sūtra, outlining the complete spiritual path of practical altruism.',
-    vows: 'To pay homage to all Buddhas, praise the Tathāgatas, make abundant offerings, confess all karmic faults, and continuously turn the Wheel of Dharma.',
-    canonicalSource: 'Avataṃsaka Sūtra (Gandavyūha / Bhadracarīpraṇidhāna)',
-    imageUrl: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80',
+    description: 'Samantabhadra embodies the practical realization of truth through action. In the Avataṃsaka Sūtra, he articulates the Ten Great Aspirations that form the liturgical foundation of East Asian Buddhist practice.',
+    vows: 'To endlessly worship all Buddhas, praise their virtues, make abundant offerings, repent karmic misdeeds, and never abandon any living being.',
+    canonicalSource: 'Avataṃsaka Sūtra (Gaṇḍavyūha chapter), Lotus Sūtra',
+    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85',
     metadata: {
       tradition: 'Mahāyāna',
-      source: 'Avataṃsaka Sūtra',
+      source: 'Avataṃsaka Sūtra (Flower Ornament Sūtra)',
       status: 'Canonical Text',
-      region: 'China, Japan, Tibet'
+      period: 'c. 2nd Century CE onwards',
+      region: 'East Asia & Himalayas'
     },
-    relatedConcepts: ['Ten Great Vows', 'Avataṃsaka Sūtra', 'Mount Emei', 'Six Pāramitās']
+    relatedConcepts: ['Ten King of Vows', 'Six-Tusked White Elephant', 'Dedication of Merit (Pariṇāmanā)']
   },
   {
     id: 'tara',
-    name: 'Tārā',
-    sanskritName: 'Ārya Tārā (आर्य तारा)',
+    name: 'Tārā (Noble Savioress)',
+    sanskritName: 'Āryā Tārā (आर्या तारा)',
     chineseName: 'Duōluó Púsà (度母)',
     tibetanName: 'Jetsun Dölma (རྗེ་བཙུན་སྒྲོལ་མ)',
-    quality: 'Fearlessness & Swift Compassionate Action',
-    embodiment: 'The Mother of all Buddhas, born from a tear of Avalokiteśvara, who vowed always to achieve liberation in a female body.',
+    japaneseName: 'Tara Bosatsu (多羅菩薩)',
+    quality: 'Swift Liberation & Fearlessness (Abhaya)',
+    embodiment: 'The mother of all Buddhas born from a tear of Avalokiteśvara, who vowed to always attain awakening in a female body.',
     iconography: [
-      'Green Tārā seated with right leg extended forward ready to spring into action',
-      'White Tārā with seven eyes of compassionate vision',
-      'Blue Utpala lotus flower in hand'
+      'Green form: Right leg extended, ready to leap to assist beings',
+      'White form: Seven compassionate eyes (forehead, palms, soles)',
+      'Utpala (blue night lotus) blossom in hand',
+      'Varada mudrā (Supreme granting gesture)'
     ],
-    tradition: 'Vajrayāna & Mahāyāna',
+    tradition: 'Mahāyāna & Vajrayāna',
     mantra: 'Oṃ Tāre Tuttāre Ture Svāhā',
-    abode: 'Mount Potala / Yulokod Pure Land',
-    description: 'Tārā represents instantaneous protective action and the divine feminine principle of awakening. When faced with the eight great fears (fire, lions, serpents, imprisonment, thieves, drowning, elephants, and demons), calling on Tārā provides immediate refuge.',
-    vows: 'I have made the vow: just as I have attained enlightenment in the female form, so shall I continuously work for sentient beings as a woman until saṃsāra is empty.',
-    canonicalSource: 'Tārā Mūlakalpa, Praises to the Twenty-One Tārās',
-    imageUrl: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80',
+    abode: 'Mount Potala / Yulokö Pure Land',
+    description: 'Revered as the ultimate embodiment of rapid compassionate response. When asked why she did not transform into a male body to attain Buddhahood, she vowed to continuously reincarnate in female form to prove that gender is devoid of inherent existence.',
+    vows: 'There are many who desire enlightenment in a man’s body, but none who work for the benefit of sentient beings in the body of a woman. Therefore, until saṃsāra is emptied, I shall work for the benefit of sentient beings only in a female body.',
+    canonicalSource: 'Tārā Tantra, Tārāmūlakalpa, Praises to the Twenty-One Tārās',
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85',
     metadata: {
-      tradition: 'Vajrayāna',
+      tradition: 'Vajrayāna & Mahāyāna',
       source: 'Tārā Tantra Literature',
       status: 'Canonical Text',
-      region: 'Tibet, Himalayas, India'
+      period: 'c. 5th Century CE onwards',
+      region: 'Tibet, Nepal, Mongolia, India'
     },
-    relatedConcepts: ['Sacred Feminine', 'Eight Great Fears', 'Green Tārā', 'White Tārā']
+    relatedConcepts: ['21 Tārās', 'Female Awakening', 'Swift Compassion', 'Green Tārā / White Tārā']
   },
   {
     id: 'prajnaparamita',
-    name: 'Prajñāpāramitā',
+    name: 'Prajñāpāramitā (Mother of All Buddhas)',
     sanskritName: 'Bhagavatī Prajñāpāramitā (प्रज्ञापारमिता)',
     chineseName: 'Bōrě Púsà (般若菩薩)',
     tibetanName: 'Yum Chenmo (ཡུམ་ཆེན་མོ)',
-    quality: 'The Great Mother of Enlightenment / Perfection of Wisdom',
-    embodiment: 'The personification of the non-dual realization of ultimate reality—the mother from whom all past, present, and future Buddhas are born.',
+    japaneseName: 'Hannya Bosatsu (般若菩薩)',
+    quality: 'Transcendental Wisdom Beyond Concept & Duality',
+    embodiment: 'The deified personification of the Great Perfection of Wisdom text that gives birth to every Buddha across space and time.',
     iconography: [
-      'Four-armed golden goddess in deep meditation posture',
-      'Upper right hand holding a gold Vajra; upper left holding the sacred palm-leaf sūtra text',
-      'Lower hands in meditation gesture (Dhyāna Mudrā)',
-      'Luminous golden skin glowing like refined celestial gold'
+      'Four arms: holding the Sacred Sūtra text, golden Vajra, and meditation mudrā',
+      'Golden skin radiating pristine luminosity',
+      'Seated in full lotus (Padmāsana) upon a giant white lotus',
+      'Crown adorned with gems of transcendent truth'
     ],
     tradition: 'Mahāyāna & Vajrayāna',
     mantra: 'Gate Gate Pāragate Pārasaṃgate Bodhi Svāhā',
-    abode: 'The Transcendent Realm of Clear Light',
-    description: 'Prajñāpāramitā is both a genre of foundational Mahāyāna scriptures and the goddess-bodhisattva who embodies their deepest revelation: that all dharmas are devoid of intrinsic selfhood, like an illusion, a dream, a bubble, a shadow.',
-    vows: 'To reveal the boundless clarity of Emptiness which frees all beings from every conceptual entrapment.',
-    canonicalSource: 'Aṣṭasāhasrikā Prajñāpāramitā Sūtra, Heart Sūtra, Diamond Sūtra',
-    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80',
+    abode: 'Unconditioned Realm of Emptiness (Dharmadhātu)',
+    description: 'Revered not merely as an individual deity, but as the Great Mother (Yum Chenmo)—the living ontological reality that all phenomena are empty of separate inherent existence, unproduced, and radiant.',
+    vows: 'To guide all seekers across the ocean of delusion to the other shore of supreme enlightenment.',
+    canonicalSource: 'Aṣṭasāhasrikā Prajñāpāramitā, Heart Sūtra, Diamond Sūtra',
+    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85',
     metadata: {
       tradition: 'Mahāyāna',
-      source: 'Prajñāpāramitā Literature (1st Century BCE)',
+      source: 'Prajñāpāramitā Literature (Earliest Mahāyāna)',
       status: 'Canonical Text',
-      region: 'Pan-Asian'
+      period: 'c. 1st Century BCE onwards',
+      region: 'Nalanda, Gandhara, East Asia'
     },
-    relatedConcepts: ['Perfection of Wisdom', 'Heart Sūtra', 'Śūnyatā', 'Great Mother']
+    relatedConcepts: ['Heart Sūtra', 'Diamond Sūtra', 'Other Shore (Pāramitā)', 'Mother of Buddhas']
   }
 ];

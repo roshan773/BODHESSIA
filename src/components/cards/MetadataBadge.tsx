@@ -18,29 +18,29 @@ export const MetadataBadge: React.FC<MetadataBadgeProps> = ({
     if (darkTheme) {
       switch (status) {
         case 'Canonical Text':
-          return 'bg-[#15281E] text-[#86D2A8] border-[#254B38]';
+          return 'bg-[#15281E] text-[#86D2A8] border-[#254B38] font-bold';
         case 'Historical Record':
-          return 'bg-[#2A2014] text-[#E5B575] border-[#554026]';
+          return 'bg-[#2A2014] text-[#E5B575] border-[#554026] font-bold';
         case 'Archaeological Evidence':
-          return 'bg-[#2A1714] text-[#F29F92] border-[#552B24]';
+          return 'bg-[#2A1714] text-[#F29F92] border-[#552B24] font-bold';
         case 'Scholarly Interpretation':
-          return 'bg-[#152430] text-[#93CAED] border-[#254860]';
+          return 'bg-[#152430] text-[#93CAED] border-[#254860] font-bold';
         default:
-          return 'bg-[#1F1F1E] text-[#B5B5AF] border-[#383835]';
+          return 'bg-[#1F1F1E] text-[#B5B5AF] border-[#383835] font-bold';
       }
     }
 
     switch (status) {
       case 'Canonical Text':
-        return 'bg-[#EBF3EF] text-[#244B38] border-[#C4DCCE]';
+        return 'bg-[#EBF3EF] text-[#164E30] border-[#A8D5BA] font-bold';
       case 'Historical Record':
-        return 'bg-[#F8F3EC] text-[#8E6A3E] border-[#E5D5C1]';
+        return 'bg-[#F8F3EC] text-[#784A1E] border-[#D9BE9B] font-bold';
       case 'Archaeological Evidence':
-        return 'bg-[#FBF0ED] text-[#8B3A2B] border-[#EDCCC5]';
+        return 'bg-[#FBF0ED] text-[#832B1D] border-[#E8ABA0] font-bold';
       case 'Scholarly Interpretation':
-        return 'bg-[#EDF4F8] text-[#225577] border-[#C8DCE8]';
+        return 'bg-[#EDF4F8] text-[#164563] border-[#ABC9DC] font-bold';
       default:
-        return 'bg-[#F0F0EC] text-[#555550] border-[#D8D8D0]';
+        return 'bg-[#F1F5F9] text-[#334155] border-[#CBD5E1] font-bold';
     }
   };
 
@@ -51,7 +51,7 @@ export const MetadataBadge: React.FC<MetadataBadgeProps> = ({
       {metadata.status && (
         <span
           className={`inline-flex items-center font-mono uppercase tracking-wider rounded-[2px] border px-2 py-0.5 ${
-            isSmall ? 'text-[9px]' : 'text-[10px]'
+            isSmall ? 'text-[10px]' : 'text-[11px]'
           } ${getBadgeStyle(metadata.status)}`}
         >
           {metadata.status}
@@ -60,11 +60,11 @@ export const MetadataBadge: React.FC<MetadataBadgeProps> = ({
       {metadata.tradition && (
         <span
           className={`inline-flex items-center font-mono uppercase tracking-wider rounded-[2px] px-2 py-0.5 ${
-            isSmall ? 'text-[9px]' : 'text-[10px]'
-          } ${
+            isSmall ? 'text-[10px]' : 'text-[11px]'
+          } font-bold ${
             darkTheme
-              ? 'bg-[#1C1C1A] text-[#9E9E98] border border-[#2E2E2A]'
-              : 'bg-[#F4F4F0] text-[#6D6D68] border border-[#E4E4DF]'
+              ? 'bg-[#1C1C1A] text-[#E2E8F0] border border-[#3A3A35]'
+              : 'bg-[#F1F5F9] text-[#1E293B] border border-[#CBD5E1]'
           }`}
         >
           {metadata.tradition}

@@ -62,7 +62,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
         category: 'Teaching',
         url: '/teachings',
         description: t.summary,
-        tags: [t.title, t.paliName, t.sanskritName, t.category, ...(t.relatedConcepts || [])]
+        tags: [t.title, t.paliName, t.sanskritName || '', t.category, ...(t.relatedConcepts || [])]
       });
     });
 
@@ -135,24 +135,24 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
     <div className="fixed inset-0 z-50 bg-[#F7F7F5] flex flex-col justify-between p-6 sm:p-12 overflow-y-auto animate-fadeIn">
       <div className="max-w-4xl mx-auto w-full space-y-8">
         {/* Top Close Bar */}
-        <div className="flex items-center justify-between pb-6 border-b border-[#E4E4DF]">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#6D6D68]">
+        <div className="flex items-center justify-between pb-6 border-b border-[#E2E8F0]">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#B8874A] font-bold">
             BODHESSIA GLOBAL KNOWLEDGE SEARCH
           </span>
           <button
             onClick={onClose}
-            className="p-2 border border-[#E4E4DF] hover:border-[#111111] transition-colors"
+            className="p-2 border border-[#E2E8F0] hover:border-[#0F172A] transition-colors cursor-pointer bg-white"
           >
-            <X className="w-5 h-5 text-[#111111]" />
+            <X className="w-5 h-5 text-[#0F172A]" />
           </button>
         </div>
 
         {/* Large Prompt & Input */}
         <div className="space-y-4">
-          <label className="font-serif text-3xl sm:text-5xl font-light text-[#111111] block">
+          <label className="font-serif text-3xl sm:text-5xl font-black text-[#0F172A] block">
             WHAT ARE YOU LOOKING FOR?
           </label>
-          <div className="relative border-b-2 border-[#111111] pb-2 flex items-center gap-4">
+          <div className="relative border-b-2 border-[#0F172A] pb-2 flex items-center gap-4">
             <Search className="w-6 h-6 text-[#B8874A] shrink-0" />
             <input
               ref={inputRef}
@@ -160,10 +160,10 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by master, doctrine, symbol, era, or sacred place..."
-              className="w-full bg-transparent text-xl sm:text-3xl font-serif text-[#111111] placeholder:text-[#9E9E98] focus:outline-none"
+              className="w-full bg-transparent text-xl sm:text-3xl font-serif text-[#0F172A] font-bold placeholder:text-[#94A3B8] focus:outline-none"
             />
             {query && (
-              <button onClick={() => setQuery('')} className="text-xs font-mono text-[#6D6D68]">
+              <button onClick={() => setQuery('')} className="text-xs font-mono text-[#334155] font-bold cursor-pointer">
                 CLEAR
               </button>
             )}
@@ -173,7 +173,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
         {/* Quick Search Suggestions */}
         {!query && (
           <div className="space-y-2">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#9E9E98] block">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#475569] font-bold block">
               Suggested Explorations
             </span>
             <div className="flex flex-wrap gap-2">
@@ -181,7 +181,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
                 <button
                   key={s}
                   onClick={() => setQuery(s)}
-                  className="px-3 py-1 bg-white border border-[#E4E4DF] hover:border-[#B8874A] text-xs font-mono text-[#111111] transition-colors"
+                  className="px-3.5 py-1.5 bg-white border border-[#E2E8F0] hover:border-[#B8874A] text-xs font-mono font-bold text-[#0F172A] transition-colors cursor-pointer shadow-xs"
                 >
                   {s}
                 </button>
@@ -191,15 +191,15 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
         )}
 
         {/* Categories Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-[#E4E4DF]">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-[#E2E8F0]">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-xs font-mono uppercase px-3.5 py-1.5 whitespace-nowrap transition-colors ${
+              className={`text-xs font-mono uppercase font-bold px-4 py-2 whitespace-nowrap transition-colors cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-[#111111] text-white'
-                  : 'bg-white text-[#6D6D68] hover:text-[#111111] border border-[#E4E4DF]'
+                  ? 'bg-[#0F172A] text-white'
+                  : 'bg-white text-[#475569] hover:text-[#0F172A] border border-[#E2E8F0]'
               }`}
             >
               {cat}
@@ -208,11 +208,11 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
         </div>
 
         {/* Results Stream */}
-        <div className="space-y-2 max-h-[480px] overflow-y-auto divide-y divide-[#E4E4DF]">
+        <div className="space-y-2 max-h-[480px] overflow-y-auto divide-y divide-[#E2E8F0]">
           {filteredResults.length === 0 ? (
-            <div className="py-12 text-center text-[#6D6D68]">
-              <p className="font-serif text-2xl">No records matching "{query}"</p>
-              <p className="text-xs font-mono mt-1 text-[#9E9E98]">
+            <div className="py-12 text-center text-[#334155]">
+              <p className="font-serif text-2xl font-bold">No records matching "{query}"</p>
+              <p className="text-xs font-mono mt-1 text-[#64748B]">
                 Try searching for 'Dharma', 'Avalokiteśvara', 'Ashoka', or 'Nirvana'.
               </p>
             </div>
@@ -225,29 +225,29 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onNav
               >
                 <div className="space-y-1 min-w-0">
                   <div className="flex items-center gap-3">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#B8874A] bg-[#F7F7F5] px-2 py-0.5 border border-[#E4E4DF]">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#B8874A] font-bold bg-[#F8FAFC] px-2 py-0.5 border border-[#E2E8F0]">
                       {item.category}
                     </span>
-                    <h4 className="text-lg sm:text-xl font-serif font-bold text-[#111111] group-hover:text-[#B8874A] transition-colors truncate">
+                    <h4 className="text-lg sm:text-xl font-serif font-bold text-[#0F172A] group-hover:text-[#B8874A] transition-colors truncate">
                       {item.title}
                     </h4>
                   </div>
-                  <p className="text-xs font-mono text-[#6D6D68]">
+                  <p className="text-xs font-mono text-[#475569] font-medium">
                     {item.subtitle}
                   </p>
-                  <p className="text-xs text-[#6D6D68] line-clamp-1 font-light">
+                  <p className="text-sm text-[#334155] line-clamp-1 font-normal">
                     {item.description}
                   </p>
                 </div>
 
-                <ArrowUpRight className="w-4 h-4 text-[#9E9E98] group-hover:text-[#111111] shrink-0 mt-2 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                <ArrowUpRight className="w-5 h-5 text-[#64748B] group-hover:text-[#0F172A] shrink-0 mt-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
               </div>
             ))
           )}
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto w-full pt-8 text-center text-xs font-mono text-[#9E9E98] border-t border-[#E4E4DF]">
+      <div className="max-w-4xl mx-auto w-full pt-8 text-center text-xs font-mono text-[#64748B] font-bold border-t border-[#E2E8F0]">
         <span>Press ESC to return · {filteredResults.length} knowledge records available</span>
       </div>
     </div>

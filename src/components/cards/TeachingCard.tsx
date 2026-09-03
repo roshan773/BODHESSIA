@@ -11,33 +11,33 @@ export const TeachingCard: React.FC<TeachingCardProps> = ({ teaching, onClick })
   return (
     <div
       onClick={onClick}
-      className="group cursor-pointer bg-white border border-[#E4E4DF] hover:border-[#B8874A] transition-all p-6 sm:p-8 flex flex-col justify-between space-y-4"
+      className="group cursor-pointer bg-white border border-[#E2E8F0] hover:border-[#B8874A] transition-all p-6 sm:p-8 flex flex-col justify-between space-y-4 shadow-xs hover:shadow-md"
     >
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-[#B8874A] bg-[#F7F7F5] px-2 py-0.5 border border-[#E4E4DF]">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#B8874A] font-bold bg-[#F8FAFC] px-2.5 py-0.5 border border-[#E2E8F0]">
             {teaching.category}
           </span>
           <MetadataBadge metadata={teaching.metadata} size="sm" />
         </div>
 
         <div>
-          <h3 className="text-2xl font-serif font-bold text-[#111111] group-hover:text-[#B8874A] transition-colors">
+          <h3 className="text-2xl font-serif font-bold text-[#0F172A] group-hover:text-[#B8874A] transition-colors">
             {teaching.title}
           </h3>
-          <p className="text-xs font-mono text-[#6D6D68] italic mt-0.5">
+          <p className="text-xs font-mono text-[#475569] font-medium italic mt-0.5">
             {teaching.paliName}
           </p>
         </div>
 
-        <p className="text-xs sm:text-sm text-[#6D6D68] leading-relaxed font-light line-clamp-3">
+        <p className="text-sm text-[#334155] leading-relaxed font-normal line-clamp-3">
           {teaching.summary}
         </p>
       </div>
 
-      <div className="pt-4 border-t border-[#E4E4DF] flex items-center justify-between text-xs font-mono text-[#111111] group-hover:text-[#B8874A]">
-        <span className="text-[10px] text-[#6D6D68]">{teaching.keyComponents.length} Key Principles</span>
-        <span className="uppercase tracking-widest text-[10px]">Examine Doctrine →</span>
+      <div className="pt-4 border-t border-[#E2E8F0] flex items-center justify-between text-xs font-mono text-[#0F172A] font-bold group-hover:text-[#B8874A]">
+        <span className="text-xs text-[#64748B] font-semibold">{teaching.keyComponents.length} Key Principles</span>
+        <span className="uppercase tracking-widest text-[11px]">Examine Doctrine →</span>
       </div>
     </div>
   );
