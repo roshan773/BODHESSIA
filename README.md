@@ -499,9 +499,5 @@ For licensing or collaboration inquiries, contact the project owner.
 *Ancient knowledge. A new way to explore it.*
 
 </div>
-```
-
-This is ready to paste directly into **`README.md`** in VS Code.
-=======
 
 >>>>>>> c183d97b8c7159411138725fce21b85c2e859812
