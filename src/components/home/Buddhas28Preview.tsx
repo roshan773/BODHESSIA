@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Info } from 'lucide-react';
+import { ArrowRight, Info, TreeDeciduous } from 'lucide-react';
 import { BUDDHAS_28 } from '../../data/buddhas28';
 import { BuddhaDetail } from '../../types';
 import { MetadataBadge } from '../cards/MetadataBadge';
@@ -11,10 +11,11 @@ interface Buddhas28PreviewProps {
 }
 
 export const Buddhas28Preview: React.FC<Buddhas28PreviewProps> = ({ onNavigate, onSelectBuddha }) => {
-  const [activeIdx, setActiveIdx] = useState<number>(3); // Dīpaṅkara by default
+  const [activeIdx, setActiveIdx] = useState<number>(27); // Gautama by default or first
   const { playSingingBowl } = useMeditationAudio();
 
   const activeBuddha = BUDDHAS_28[activeIdx];
+  const isHistorical = activeBuddha.representationType === 'historical-portrait' && activeBuddha.imageUrl;
 
   const handleSelect = (idx: number) => {
     setActiveIdx(idx);
@@ -28,19 +29,19 @@ export const Buddhas28Preview: React.FC<Buddhas28PreviewProps> = ({ onNavigate, 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#262626] gap-4">
           <div>
             <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#B8874A] font-bold block mb-2">
-              05 · SIGNATURE CHRONICLE
+              05 · STRUCTURED KNOWLEDGE SYSTEM
             </span>
             <h2 className="text-4xl sm:text-6xl font-serif font-black text-white">
               THE 28 BUDDHAS
             </h2>
             <p className="text-sm font-mono text-neutral-300 mt-1 uppercase tracking-wider font-semibold">
-              A LINEAGE PRESERVED THROUGH PĀLI TRADITION
+              TRADITIONAL THERAVĀDA / PĀLI ENUMERATION
             </p>
           </div>
 
           <button
             onClick={() => onNavigate('/28-buddhas')}
-            className="text-xs font-mono uppercase tracking-wider text-[#B8874A] hover:text-white font-bold transition-colors flex items-center gap-1 self-start md:self-auto"
+            className="text-xs font-mono uppercase tracking-wider text-[#B8874A] hover:text-white font-bold transition-colors flex items-center gap-1 self-start md:self-auto cursor-pointer"
           >
             <span>Explore All 28 Records</span>
             <ArrowRight className="w-4 h-4" />
@@ -51,14 +52,14 @@ export const Buddhas28Preview: React.FC<Buddhas28PreviewProps> = ({ onNavigate, 
         <div className="p-4 bg-[#141414] border border-[#262626] flex items-start gap-3 mb-12 text-sm text-neutral-300">
           <Info className="w-5 h-5 text-[#B8874A] shrink-0 mt-0.5" />
           <div>
-            <strong className="text-white font-mono uppercase font-bold">Theravāda Pāli Canonical Account:</strong>{' '}
-            Recorded in the <em>Buddhavamsa</em> (Khuddaka Nikāya). Other traditions venerate the Seven Buddhas of Antiquity and infinite Buddhas across the cosmic directions.
+            <strong className="text-white font-mono uppercase font-bold">Historical & Canonical Integrity:</strong>{' '}
+            Recorded in the Pāli <em>Buddhavamsa</em>. Historical and archaeological sculpture exists specifically for Gautama Buddha (#28) and Ashokan epigraphy for past Buddhas. Symbolic canonical identities are preserved for the ancient succession.
           </div>
         </div>
 
-        {/* Interactive Lineage Interface: Left Numbered Sequence + Right Active Detail */}
+        {/* Interactive Lineage Interface */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left: Scrollable Numbered List */}
+          {/* Left: Numbered Editorial List */}
           <div className="lg:col-span-6 max-h-[540px] overflow-y-auto pr-2 divide-y divide-[#262626] border-t border-b border-[#262626]">
             {BUDDHAS_28.map((b, idx) => {
               const isActive = activeIdx === idx;
@@ -66,7 +67,7 @@ export const Buddhas28Preview: React.FC<Buddhas28PreviewProps> = ({ onNavigate, 
                 <button
                   key={b.id}
                   onClick={() => handleSelect(idx)}
-                  className={`w-full py-4 px-4 text-left transition-all flex items-center justify-between group ${
+                  className={`w-full py-4 px-4 text-left transition-all flex items-center justify-between group cursor-pointer ${
                     isActive
                       ? 'bg-[#1C1C1A] text-white border-l-4 border-[#B8874A]'
                       : 'hover:bg-[#141414] text-neutral-300'
@@ -81,7 +82,7 @@ export const Buddhas28Preview: React.FC<Buddhas28PreviewProps> = ({ onNavigate, 
                         {b.paliName}
                       </span>
                       <span className="text-xs font-mono text-neutral-400 line-clamp-1">
-                        {b.meaning}
+                        {b.meaning} · {b.bodhiTree.split('(')[0]}
                       </span>
                     </div>
                   </div>
@@ -104,13 +105,39 @@ export const Buddhas28Preview: React.FC<Buddhas28PreviewProps> = ({ onNavigate, 
                 <MetadataBadge metadata={activeBuddha.metadata} size="sm" darkTheme={true} />
               </div>
 
-              <div className="relative aspect-[16/9] overflow-hidden bg-black border border-[#262626]">
-                <img
-                  src={activeBuddha.imageUrl}
-                  alt={activeBuddha.paliName}
-                  className="w-full h-full object-cover object-center filter brightness-100"
-                />
-              </div>
+              {/* Verified Image or Minimal Geometric Identity */}
+              {isHistorical ? (
+                <div className="relative aspect-[16/9] overflow-hidden bg-black border border-[#262626]">
+                  <img
+                    src={activeBuddha.imageUrl}
+                    alt={activeBuddha.paliName}
+                    className="w-full h-full object-cover object-center filter brightness-100"
+                  />
+                  <div className="absolute bottom-2 left-2 bg-black/80 px-2 py-0.5 text-[10px] font-mono text-[#B8874A] border border-[#333]">
+                    HISTORICAL SCULPTURE
+                  </div>
+                </div>
+              ) : (
+                <div className="relative aspect-[16/9] overflow-hidden bg-[#0A0A0A] border border-[#262626] p-6 flex flex-col justify-between items-center text-center">
+                  <div className="w-full flex items-center justify-between text-[11px] font-mono text-neutral-400">
+                    <span className="text-[#B8874A] font-bold">BUDDHAVAMSA RECORD</span>
+                    <span>TRADITIONAL CANON</span>
+                  </div>
+
+                  <div className="my-auto flex flex-col items-center gap-2">
+                    <div className="w-14 h-14 rounded-full border border-[#B8874A]/40 flex items-center justify-center">
+                      <TreeDeciduous className="w-7 h-7 text-[#B8874A]" />
+                    </div>
+                    <span className="text-xs font-mono text-neutral-300">
+                      Bodhi: {activeBuddha.bodhiTree.split('(')[0]}
+                    </span>
+                  </div>
+
+                  <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">
+                    TRADITIONAL SYMBOLIC IDENTITY
+                  </span>
+                </div>
+              )}
 
               <div>
                 <h3 className="text-3xl font-serif font-black text-white">
@@ -139,7 +166,7 @@ export const Buddhas28Preview: React.FC<Buddhas28PreviewProps> = ({ onNavigate, 
 
             <button
               onClick={() => onSelectBuddha ? onSelectBuddha(activeBuddha) : onNavigate('/28-buddhas')}
-              className="w-full py-3.5 bg-white hover:bg-[#B8874A] text-[#0A0A0A] hover:text-white font-mono text-xs uppercase tracking-wider font-bold transition-colors flex items-center justify-center gap-2 shadow-md"
+              className="w-full py-3.5 bg-white hover:bg-[#B8874A] text-[#0A0A0A] hover:text-white font-mono text-xs uppercase tracking-wider font-bold transition-colors flex items-center justify-center gap-2 shadow-md cursor-pointer"
             >
               <span>View Full Lineage Record</span>
               <ArrowRight className="w-4 h-4" />

@@ -1,4 +1,5 @@
 import { BuddhaDetail } from '../types';
+import { IMAGE_REGISTRY } from './images';
 
 export const BUDDHAS_28: BuddhaDetail[] = [
   {
@@ -13,9 +14,9 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     lifespan: '100,000 years',
     birthplace: 'Popphavati City',
     royalLineage: 'Sunanda King & Sunandā Queen',
-    description: 'The first of the 28 Buddhas enumerated in the Pāli Buddhavamsa. Born in the city of Popphavati, he renounced worldly sovereignty on an elephant conveyance and attained supreme awakening under the Rukkaththana tree.',
+    description: 'The first of the 28 Buddhas enumerated in the Pāli Buddhavamsa chronicle. Born in the city of Popphavati, he renounced worldly sovereignty and attained supreme awakening under the Rukkaththana tree.',
     significance: 'Initiator of the lineage recorded in the Theravāda chronicle; symbolizes the primordial severance of Taṇhā (thirst/craving).',
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: {
       tradition: 'Theravāda',
       source: 'Buddhavamsa, Khuddaka Nikāya',
@@ -39,7 +40,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Sudheva & Queen Yasodharā',
     description: 'The second Buddha of the legendary past. Possessed extraordinary intellectual radiance and taught thousands of disciples in an age of serene longevity.',
     significance: 'Embodiment of luminous intellect aligned with unconditional loving-kindness.',
-    imageUrl: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: {
       tradition: 'Theravāda',
       source: 'Buddhavamsa',
@@ -62,7 +63,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Sumangala & Queen Yasavathī',
     description: 'The third Buddha who provided an unshakeable island of refuge (saraṇa) to beings tormented by cyclic existence.',
     significance: 'Associated with the inception of the Triple Gem Refuge formula.',
-    imageUrl: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: {
       tradition: 'Theravāda',
       source: 'Buddhavamsa',
@@ -83,9 +84,9 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     lifespan: '100,000 years',
     birthplace: 'Rammavatī City',
     royalLineage: 'King Sudeva & Queen Sumedhā',
-    description: 'The profoundly revered Buddha under whom the ascetic Sumedha (the future Gautama Buddha) prostrated his body in the mud and received the definitive prophecy (Niyathavivarana) of his future awakening.',
+    description: 'The profoundly revered Buddha under whom the ascetic Sumedha (the future Gautama Buddha) received the definitive prophecy (Niyathavivarana) of his future awakening.',
     significance: 'The foundational pivotal figure in the Bodhisatta vow lineage across both Theravāda and Mahāyāna traditions.',
-    imageUrl: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: {
       tradition: 'Cross-Tradition',
       source: 'Buddhavamsa & Mahāvastu',
@@ -109,7 +110,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Sunanda & Queen Sujātā',
     description: 'Attained awakening after ten months of ascetic striving. Taught three vast assemblies of disciples.',
     significance: 'Associated with penetrating intuitive comprehension of Dhamma.',
-    imageUrl: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -126,7 +127,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Uttara & Queen Uttarā',
     description: 'Renowned for his body aura that radiated effortlessly across ten thousand world systems without diminishing day or night.',
     significance: 'Embodiment of uninterrupted spiritual illumination (Byāmappabhā).',
-    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -141,9 +142,9 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     lifespan: '90,000 years',
     birthplace: 'Mekhala City',
     royalLineage: 'King Sudatta & Queen Sirimā',
-    description: 'Possessed profound calmness of senses. Taught the Dhamma on Mount Mekhala to millions of devas and humans.',
+    description: 'Possessed profound calmness of senses. Taught the Dhamma on Mount Mekhala to millions of seekers.',
     significance: 'Exemplifies tranquil sensory mastery (Indriya-samvara).',
-    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -160,7 +161,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Vipula & Queen Vipulā',
     description: 'Practiced rigorous meditative absorption for seven months before attaining unsurpassable Bodhi.',
     significance: 'Teacher of analytical meditation and the dhyānas.',
-    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -177,7 +178,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Sudhamma & Queen Sudhammā',
     description: 'Renowned for illuminating the cosmic darkness with the splendor of spotless ethical conduct.',
     significance: 'Model of immaculate moral purity (Sīla-visuddhi).',
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -194,7 +195,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Yasavā & Queen Yasodharā',
     description: 'Gifted with unsurpassed clairvoyance capable of discerning the spiritual readiness of every living being.',
     significance: 'Master of Divine Eye (Dibbacakkhu) and epistemic vision.',
-    imageUrl: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -211,7 +212,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Asama & Queen Asamā',
     description: 'Untainted by the world like a lotus flower untouched by muddy water. Delivered three major discourses.',
     significance: 'The timeless symbol of purity blooming amidst mundane defilements.',
-    imageUrl: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -226,9 +227,9 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     lifespan: '90,000 years',
     birthplace: 'Dhaññavatī',
     royalLineage: 'King Sudeva & Queen Anomā',
-    description: 'Traveled through the heavens and human realms pacifying conflict through the exposition of non-violence.',
+    description: 'Traveled through the world pacifying conflict through the exposition of non-violence.',
     significance: 'Archetype of active peacebuilding through Dhamma.',
-    imageUrl: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -243,9 +244,9 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     lifespan: '100,000 years',
     birthplace: 'Haṃsavatī',
     royalLineage: 'King Ānanda & Queen Sujātā',
-    description: 'The era where numerous great disciples of Gautama Buddha (such as Sāriputta and Mahāmoggallāna) first formed their solemn aspirations (abhinīhāra) for their specific chief disciple roles.',
+    description: 'The era where numerous great disciples of Gautama Buddha (such as Sāriputta and Mahāmoggallāna) first formed their solemn aspirations (abhinīhāra).',
     significance: 'Critical canonical anchor for disciple aspirations in the Pāli commentary literature.',
-    imageUrl: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa & Apadāna', status: 'Canonical Text' }
   },
   {
@@ -262,7 +263,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Sudassana & Queen Sudassanā',
     description: 'Renowned for penetrating discourse on the nature of mind and consciousness.',
     significance: 'Deepened contemplative frameworks of citta and cetasika.',
-    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -279,7 +280,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Uggata & Queen Pabhāvatī',
     description: 'Gathered a vast community of ascetic seekers and clarified the Vinaya guidelines of monastic restraint.',
     significance: 'Associated with early monastic harmony.',
-    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -296,7 +297,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Sudatta & Queen Sucandā',
     description: 'Inspired millions simply by his dignified physical deportment and compassionate gaze.',
     significance: 'Exemplar of radiant bodily mindfulness (Kāyagatāsati).',
-    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -313,7 +314,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Sāgara & Queen Sudassanā',
     description: 'Renowned for answering the deepest philosophical inquiries with concise, crystal-clear aphorisms.',
     significance: 'Master of pedagogical clarity (Neyyattha & Nītattha).',
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -330,7 +331,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Saraṇa & Queen Sunandā',
     description: 'Proclaimed the universal reality of Anicca (impermanence) and Dukkha across thousands of realms.',
     significance: 'Steadfast champion of ontological Dhamma truth.',
-    imageUrl: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -347,7 +348,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Udena & Queen Suphassā',
     description: 'An ancient Buddha sharing the name Siddhattha who achieved absolute spiritual perfection in his era.',
     significance: 'Archetype of total realization of goal.',
-    imageUrl: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -364,7 +365,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Janasandha & Queen Padumā',
     description: 'Turned the Wheel of Dhamma in the deer park of Yasavatī before an assembly of hundreds of thousands.',
     significance: 'Associated with deep samādhi states.',
-    imageUrl: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -381,7 +382,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Jayasena & Queen Sirimā',
     description: 'Renowned for gentle, unhurried instruction that led multitudes of seekers to stream-entry.',
     significance: 'Exemplar of patient guidance.',
-    imageUrl: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Theravāda', source: 'Buddhavamsa', status: 'Traditional Account' }
   },
   {
@@ -398,7 +399,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Bandhumā & Queen Bandhumatī',
     description: 'The first of the universally recognized Seven Past Buddhas (Saptatathāgata). Detailed in the Mahāpadāna Sutta (Dīgha Nikāya 14) as the archetype whose life structure mirrors all Buddhas.',
     significance: 'Pan-Buddhist foundational canonical figure; represents Vipassanā (insight into the three marks).',
-    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: {
       tradition: 'Cross-Tradition',
       source: 'Mahāpadāna Sutta, Dīgha Nikāya',
@@ -422,7 +423,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Aruṇa & Queen Pabhāvatī',
     description: 'Second of the Seven Past Buddhas. Renowned for unyielding determination and clarity during the proclamation of the Pātimokkha monastic rules.',
     significance: 'Prominent in the Sanskrit, Chinese Āgama, and Pāli canons.',
-    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Cross-Tradition', source: 'Dīgha Nikāya & Dīrghāgama', status: 'Canonical Text' }
   },
   {
@@ -439,7 +440,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Suppatīta & Queen Yasavatī',
     description: 'Third of the Seven Past Buddhas. Attained awakening beneath twin Sal trees and delivered the Pātimokkha discourse to eighty thousand monks.',
     significance: 'Revered across Bharhut and Sanchi stupa gateway inscriptions.',
-    imageUrl: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: { tradition: 'Cross-Tradition', source: 'Canonical & Epigraphical', status: 'Canonical Text' }
   },
   {
@@ -454,9 +455,9 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     lifespan: '40,000 years',
     birthplace: 'Khemavatī City',
     royalLineage: 'Aggidatta Brahmin & Visākhā',
-    description: 'The first Buddha to arise in our present Fortunate Aeon (Bhaddakappa). Mentioned extensively in the Majjhima Nikāya (Māra-tajjaniya Sutta).',
-    significance: 'First Buddha of our current geological/cosmic cycle; honored in Ashokan pillar inscriptions at Gotihawa.',
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85',
+    description: 'The first Buddha to arise in our present Fortunate Aeon (Bhaddakappa). Mentioned in the Majjhima Nikāya (Māra-tajjaniya Sutta).',
+    significance: 'First Buddha of our current cycle; honored in Ashokan pillar inscriptions at Gotihawa.',
+    representationType: 'canonical-symbolic',
     metadata: {
       tradition: 'Cross-Tradition',
       source: 'Majjhima Nikāya & Ashokan Epigraphy',
@@ -480,7 +481,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'Yaññadatta Brahmin & Uttarā',
     description: 'The second Buddha of the present aeon. Emperor Ashoka expanded his commemorative stupa at Nigali Sagar in 249 BCE and recorded the event on a surviving stone pillar.',
     significance: 'Directly verified by Emperor Ashoka’s 3rd century BCE epigraphy at Nigali Sagar.',
-    imageUrl: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: {
       tradition: 'Cross-Tradition',
       source: 'Nigali Sagar Ashoka Edict & Buddhavamsa',
@@ -504,7 +505,7 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'Brahmadatta Brahmin & Dhanavatī',
     description: 'The direct immediate predecessor to Gautama Buddha in our aeon. Born in Varanasi; his monastic dispensation flourished until human lifespans declined.',
     significance: 'The direct link between antiquity and Siddhārtha Gautama; universally venerated across all Buddhist traditions.',
-    imageUrl: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=85',
+    representationType: 'canonical-symbolic',
     metadata: {
       tradition: 'Cross-Tradition',
       source: 'Tipiṭaka, Āgamas & Gandhara Scrolls',
@@ -528,7 +529,8 @@ export const BUDDHAS_28: BuddhaDetail[] = [
     royalLineage: 'King Śuddhodana & Queen Māyādevī',
     description: 'The historical founder of Buddhism in our era. Born Prince Siddhārtha in Kapilavastu, he renounced royal luxury at age 29, attained supreme enlightenment at age 35 beneath the Bodhi tree at Bodh Gaya, and taught the Four Noble Truths and Eightfold Path for 45 years.',
     significance: 'The historical fountainhead of Buddhism, whose teachings, Vinaya discipline, and monastic institutions survive today across the globe.',
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1400&q=90',
+    imageUrl: IMAGE_REGISTRY['gautama-buddha'].src,
+    representationType: 'historical-portrait',
     metadata: {
       tradition: 'Historical & Universal',
       source: 'Archaeology, Epigraphy, Tipiṭaka, Mahāyāna Canons',

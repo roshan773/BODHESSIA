@@ -27,7 +27,8 @@ export interface BuddhaDetail {
   chiefDisciples?: string[];
   description: string;
   significance?: string;
-  imageUrl: string;
+  imageUrl?: string;
+  representationType?: 'historical-portrait' | 'canonical-symbolic';
   quote?: string;
   metadata: MetadataTag;
   relatedConcepts?: string[];

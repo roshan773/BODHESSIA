@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft, MapPin, Calendar, Compass, Users, Sparkles } from 'lucide-react';
 import { MetadataBadge } from '../components/cards/MetadataBadge';
 import { useMeditationAudio } from '../context/AudioContext';
+import { IMAGE_REGISTRY } from '../data/images';
 
 interface BuddhaPageProps {
   onNavigate: (route: string) => void;
@@ -15,12 +16,12 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
     {
       num: '01',
       title: 'The Nativity at Lumbini',
-      location: 'Lumbini Grove (Modern Nepal)',
+      location: 'Lumbini Sacred Garden (Modern Nepal)',
       period: 'c. 563 / 490 BCE',
       paliTerm: 'Jāti',
       desc: 'Born Prince Siddhārtha to Queen Māyādevī and King Śuddhodana. Sage Asita prophesied that the child would attain supreme awakening and turn the Wheel of Dharma.',
       quote: 'Aggo’hamasmi lokassa, jeṭṭho’hamasmi lokassa, seṭṭho’hamasmi lokassa — Foremost am I in the world, eldest am I in the world, supreme am I in the world.',
-      image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80'
+      image: IMAGE_REGISTRY['lumbini-birth'].src
     },
     {
       num: '02',
@@ -30,7 +31,7 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
       paliTerm: 'Abhinikkhamana',
       desc: 'Encountered aging, sickness, death, and a serene wandering monk. Realizing the vulnerability of all beings, he renounced the palace to seek the deathless.',
       quote: 'Why do I, being myself subject to birth, aging, and death, seek what is also subject to these? Let me seek the unborn, unaging, deathless supreme peace of Nibbāna.',
-      image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85'
     },
     {
       num: '03',
@@ -40,7 +41,7 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
       paliTerm: 'Dukkaracariyā',
       desc: 'Mastered the formless jhānas under yogic masters, then underwent severe physical mortifications before discovering that balanced energy leads to awakening.',
       quote: 'Just as the lute strings sound pure neither when too tight nor too slack, so energy tuned with balance leads to liberation.',
-      image: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1200&q=85'
     },
     {
       num: '04',
@@ -48,9 +49,9 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
       location: 'Bodh Gaya (Diamond Throne)',
       period: 'Age 35 (Vesak Full Moon)',
       paliTerm: 'Sammāsambodhi',
-      desc: 'Beneath the Sacred Bodhi tree beside the Nerañjarā River, he overcame Māra, penetrated the 12 Links of Dependent Origination, and attained Complete Enlightenment.',
+      desc: 'Beneath the Sacred Bodhi tree beside the Nerañjarā River, he penetrated the 12 Links of Dependent Origination and attained Complete Enlightenment.',
       quote: 'Through many a birth I wandered in saṃsāra seeking the housebuilder... O housebuilder, you are seen! You shall build no house again!',
-      image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=800&q=80'
+      image: IMAGE_REGISTRY['bodhgaya-awakening'].src
     },
     {
       num: '05',
@@ -60,7 +61,7 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
       paliTerm: 'Dhammacakkappavattana',
       desc: 'Proclaimed the Four Noble Truths and Noble Eightfold Path before the five ascetic seekers, establishing the living monastic Sangha.',
       quote: 'Open are the doors to the Deathless for those who have ears to hear. Let them send forth faith.',
-      image: 'https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?auto=format&fit=crop&w=800&q=80'
+      image: IMAGE_REGISTRY['sarnath-sermon'].src
     },
     {
       num: '06',
@@ -70,7 +71,7 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
       paliTerm: 'Cārikā',
       desc: 'Traveled northern India on foot, founding monasteries at Jetavana and Veluvana, welcoming kings, outcasts, and seekers without caste distinctions.',
       quote: 'Not by birth is one an outcast, not by birth is one a noble; by deeds alone is one an outcast, by deeds alone is one noble.',
-      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
+      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85'
     },
     {
       num: '07',
@@ -80,7 +81,7 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
       paliTerm: 'Mahāparinibbāna',
       desc: 'Laying between the twin Sal trees, the Buddha delivered his final exhortation on wakeful diligence and passed into final Nirvāṇa.',
       quote: 'Vayadhammā saṅkhārā appamādena sampādetha — All conditioned things are subject to disintegration; strive diligently with wakefulness.',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80'
+      image: IMAGE_REGISTRY['kushinagar-parinirvana'].src
     }
   ];
 
@@ -106,13 +107,13 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
   return (
     <div className="pt-24 pb-20 bg-[#F7F7F5] min-h-screen">
       {/* Header Banner */}
-      <div className="py-16 bg-white border-b border-[#E4E4DF]">
+      <div className="py-16 bg-white border-b border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={() => onNavigate('/')}
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#6D6D68] hover:text-[#111111] mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#475569] hover:text-[#0F172A] font-bold mb-6 transition-colors cursor-pointer"
           >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Portal
+            <ArrowLeft className="w-4 h-4" /> Back to Portal
           </button>
 
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -126,22 +127,22 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
                 size="md"
               />
 
-              <h1 className="text-4xl sm:text-6xl font-serif font-light text-[#111111]">
+              <h1 className="text-4xl sm:text-6xl font-serif font-black text-[#0F172A]">
                 THE BUDDHA (ŚĀKYAMUNI)
               </h1>
-              <p className="text-base font-mono text-[#B8874A] italic">
+              <p className="text-base font-mono text-[#B8874A] font-bold italic">
                 Siddhārtha Gautama · The Awakened Sage of the Śākyas
               </p>
-              <p className="text-sm sm:text-base text-[#6D6D68] leading-relaxed font-light">
+              <p className="text-base text-[#334155] leading-relaxed font-normal">
                 Born a prince of the Shakya republic in ancient northern India/Nepal, Siddhartha Gautama renounced dynastic succession to resolve the universal crisis of human mortality and suffering. His awakening beneath the Bodhi tree birthed a global philosophical dispensation.
               </p>
             </div>
 
-            <div className="p-6 bg-[#F7F7F5] border border-[#E4E4DF] max-w-sm space-y-2 shrink-0">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#B8874A] block">
+            <div className="p-6 bg-[#F8FAFC] border border-[#E2E8F0] max-w-sm space-y-2 shrink-0 shadow-xs">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#B8874A] font-bold block">
                 Pivotal Historical Coordinates
               </span>
-              <div className="text-xs font-mono text-[#111111] space-y-1">
+              <div className="text-xs font-mono text-[#0F172A] space-y-1.5 font-semibold">
                 <div>• Birth: Lumbini (c. 563 / 490 BCE)</div>
                 <div>• Awakening: Bodh Gaya (Age 35)</div>
                 <div>• First Sermon: Sarnath Deer Park</div>
@@ -151,7 +152,7 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex items-center gap-2 mt-12 overflow-x-auto border-b border-[#E4E4DF] pb-px">
+          <div className="flex items-center gap-2 mt-12 overflow-x-auto border-b border-[#E2E8F0] pb-px">
             {[
               { id: 'life', label: '01. The Seven Life Stages', icon: Compass },
               { id: 'disciples', label: '02. Foremost Disciples', icon: Users },
@@ -166,13 +167,13 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
                     setActiveTab(tab.id as any);
                     playSingingBowl(1.05);
                   }}
-                  className={`flex items-center gap-2 px-4 py-3 text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-colors ${
+                  className={`flex items-center gap-2 px-4 py-3 text-xs font-mono uppercase tracking-wider font-bold whitespace-nowrap transition-colors cursor-pointer ${
                     activeTab === tab.id
-                      ? 'border-b-2 border-[#111111] text-[#111111] font-bold'
-                      : 'text-[#6D6D68] hover:text-[#111111]'
+                      ? 'border-b-2 border-[#0F172A] text-[#0F172A]'
+                      : 'text-[#475569] hover:text-[#0F172A]'
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5 text-[#B8874A]" />
+                  <Icon className="w-4 h-4 text-[#B8874A]" />
                   <span>{tab.label}</span>
                 </button>
               );
@@ -186,10 +187,10 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
         {activeTab === 'life' && (
           <div className="space-y-8">
             <div className="max-w-2xl">
-              <h2 className="text-2xl sm:text-3xl font-serif font-light text-[#111111]">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#0F172A]">
                 The Seven Life Milestones
               </h2>
-              <p className="text-xs sm:text-sm text-[#6D6D68] mt-1">
+              <p className="text-sm text-[#475569] font-normal mt-1">
                 From the royal palace in Kapilavastu to the serene parinirvāṇa under the Sal trees.
               </p>
             </div>
@@ -198,42 +199,42 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
               {lifeStages.map((stage) => (
                 <div
                   key={stage.num}
-                  className="bg-white border border-[#E4E4DF] p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+                  className="bg-white border border-[#E2E8F0] p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xs"
                 >
-                  <div className="lg:col-span-4 relative aspect-[16/10] bg-[#111111] overflow-hidden">
+                  <div className="lg:col-span-4 relative aspect-[16/10] bg-[#0A0A0A] overflow-hidden">
                     <img
                       src={stage.image}
                       alt={stage.title}
                       loading="lazy"
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-center filter brightness-100"
                     />
-                    <div className="absolute top-3 left-3 bg-white/95 px-2.5 py-0.5 text-xs font-mono font-bold text-[#111111] border border-[#E4E4DF]">
+                    <div className="absolute top-3 left-3 bg-white/95 px-2.5 py-0.5 text-xs font-mono font-bold text-[#0F172A] border border-[#E2E8F0] shadow-xs">
                       STAGE {stage.num}
                     </div>
                   </div>
 
                   <div className="lg:col-span-8 space-y-3">
-                    <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[#6D6D68]">
+                    <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[#475569] font-semibold">
                       <span className="text-[#B8874A] flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5" /> {stage.location}
+                        <MapPin className="w-4 h-4" /> {stage.location}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5" /> {stage.period}
+                        <Calendar className="w-4 h-4" /> {stage.period}
                       </span>
-                      <span className="text-[#111111] ml-auto italic">
+                      <span className="text-[#0F172A] ml-auto italic">
                         {stage.paliTerm}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl font-serif font-bold text-[#111111]">
+                    <h3 className="text-2xl font-serif font-bold text-[#0F172A]">
                       {stage.title}
                     </h3>
 
-                    <p className="text-sm text-[#6D6D68] leading-relaxed font-light">
+                    <p className="text-sm text-[#334155] leading-relaxed font-normal">
                       {stage.desc}
                     </p>
 
-                    <blockquote className="p-3.5 bg-[#F7F7F5] border-l-2 border-[#B8874A] text-xs font-serif italic text-[#111111]">
+                    <blockquote className="p-3.5 bg-[#F8FAFC] border-l-4 border-[#B8874A] text-xs font-serif italic text-[#0F172A] font-semibold">
                       "{stage.quote}"
                     </blockquote>
                   </div>
@@ -246,10 +247,10 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
         {activeTab === 'disciples' && (
           <div className="space-y-8">
             <div className="max-w-2xl">
-              <h2 className="text-2xl sm:text-3xl font-serif font-light text-[#111111]">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#0F172A]">
                 The Foremost Disciples (Arahants)
               </h2>
-              <p className="text-xs sm:text-sm text-[#6D6D68] mt-1">
+              <p className="text-sm text-[#475569] font-normal mt-1">
                 Monks and nuns designated by the Buddha as foremost in specific spiritual masteries.
               </p>
             </div>
@@ -258,18 +259,18 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
               {chiefDisciples.map((disc, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-[#E4E4DF] p-6 space-y-3"
+                  className="bg-white border border-[#E2E8F0] p-6 space-y-3 shadow-xs"
                 >
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#B8874A] block">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#B8874A] font-bold block">
                     Chief Master
                   </span>
-                  <h3 className="text-xl font-serif font-bold text-[#111111]">
+                  <h3 className="text-xl font-serif font-bold text-[#0F172A]">
                     {disc.name}
                   </h3>
-                  <div className="text-xs font-mono text-[#111111] bg-[#F7F7F5] p-2 border border-[#E4E4DF]">
+                  <div className="text-xs font-mono text-[#0F172A] font-bold bg-[#F8FAFC] p-2.5 border border-[#E2E8F0]">
                     {disc.title}
                   </div>
-                  <p className="text-xs text-[#6D6D68] leading-relaxed font-light">
+                  <p className="text-sm text-[#334155] leading-relaxed font-normal">
                     {disc.desc}
                   </p>
                 </div>
@@ -281,24 +282,24 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
         {activeTab === 'marks' && (
           <div className="space-y-8">
             <div className="max-w-2xl">
-              <h2 className="text-2xl sm:text-3xl font-serif font-light text-[#111111]">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#0F172A]">
                 The 32 Marks of a Great Being (Mahāpurisalakkhaṇa)
               </h2>
-              <p className="text-xs sm:text-sm text-[#6D6D68] mt-1">
+              <p className="text-sm text-[#475569] font-normal mt-1">
                 From the Lakkhana Sutta (Dīgha Nikāya 30): Ancient physical iconography symbolizing past karmic perfections.
               </p>
             </div>
 
-            <div className="bg-white border border-[#E4E4DF] p-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-white border border-[#E2E8F0] p-8 grid grid-cols-1 md:grid-cols-2 gap-4 shadow-xs">
               {marksOfGreatBeing.map((mark, idx) => (
                 <div
                   key={idx}
-                  className="p-4 bg-[#F7F7F5] border border-[#E4E4DF] flex items-start gap-3"
+                  className="p-4 bg-[#F8FAFC] border border-[#E2E8F0] flex items-start gap-3"
                 >
                   <span className="font-mono text-xs text-[#B8874A] font-bold shrink-0 mt-0.5">
                     0{idx + 1}.
                   </span>
-                  <p className="text-xs sm:text-sm text-[#111111] leading-relaxed font-light">
+                  <p className="text-sm text-[#0F172A] leading-relaxed font-normal">
                     {mark}
                   </p>
                 </div>
@@ -310,29 +311,36 @@ export const BuddhaPage: React.FC<BuddhaPageProps> = ({ onNavigate }) => {
         {activeTab === 'pilgrimage' && (
           <div className="space-y-8">
             <div className="max-w-2xl">
-              <h2 className="text-2xl sm:text-3xl font-serif font-light text-[#111111]">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#0F172A]">
                 The Four Sacred Pilgrimage Places
               </h2>
-              <p className="text-xs sm:text-sm text-[#6D6D68] mt-1">
+              <p className="text-sm text-[#475569] font-normal mt-1">
                 Directly designated in the Mahāparinibbāna Sutta as places of reverent reflection.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { name: '1. Lumbini', sub: 'Site of Birth', desc: 'Where the Bodhisatta was born into the human realm.', loc: 'Nepal' },
-                { name: '2. Bodh Gaya', sub: 'Site of Supreme Awakening', desc: 'Where the Buddha attained unsurpassed enlightenment beneath the Bodhi tree.', loc: 'Bihar, India' },
-                { name: '3. Sarnath (Deer Park)', sub: 'Site of the First Sermon', desc: 'Where the Wheel of Dharma was set into motion.', loc: 'Varanasi, India' },
-                { name: '4. Kushinagar', sub: 'Site of Mahāparinirvāṇa', desc: 'Where the Tathāgata passed into the unconditioned element without residue.', loc: 'Uttar Pradesh, India' },
+                { name: '1. Lumbini', sub: 'Site of Birth', desc: 'Where the Bodhisatta was born into the human realm.', loc: 'Nepal', img: IMAGE_REGISTRY['place-lumbini'].src },
+                { name: '2. Bodh Gaya', sub: 'Site of Supreme Awakening', desc: 'Where the Buddha attained unsurpassed enlightenment beneath the Bodhi tree.', loc: 'Bihar, India', img: IMAGE_REGISTRY['place-bodhgaya'].src },
+                { name: '3. Sarnath (Deer Park)', sub: 'Site of the First Sermon', desc: 'Where the Wheel of Dharma was set into motion.', loc: 'Varanasi, India', img: IMAGE_REGISTRY['place-sarnath'].src },
+                { name: '4. Kushinagar', sub: 'Site of Mahāparinirvāṇa', desc: 'Where the Tathāgata passed into the unconditioned element without residue.', loc: 'Uttar Pradesh, India', img: IMAGE_REGISTRY['place-kushinagar'].src },
               ].map((site, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-[#E4E4DF] p-6 space-y-2"
+                  className="bg-white border border-[#E2E8F0] overflow-hidden flex flex-col justify-between shadow-xs"
                 >
-                  <span className="text-[10px] font-mono text-[#B8874A] uppercase tracking-widest">{site.loc}</span>
-                  <h3 className="text-xl font-serif font-bold text-[#111111]">{site.name}</h3>
-                  <span className="text-xs font-mono text-[#6D6D68] block">{site.sub}</span>
-                  <p className="text-xs text-[#6D6D68] leading-relaxed font-light">{site.desc}</p>
+                  <div className="relative aspect-[16/9] overflow-hidden bg-[#0A0A0A]">
+                    <img src={site.img} alt={site.name} className="w-full h-full object-cover object-center" />
+                    <div className="absolute top-3 left-3 bg-white/95 px-2.5 py-0.5 text-xs font-mono font-bold text-[#0F172A] border border-[#E2E8F0]">
+                      {site.loc}
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h3 className="text-xl font-serif font-bold text-[#0F172A]">{site.name}</h3>
+                    <span className="text-xs font-mono text-[#B8874A] font-bold block">{site.sub}</span>
+                    <p className="text-sm text-[#334155] leading-relaxed font-normal">{site.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
